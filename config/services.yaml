@@ -1,9 +1,9 @@
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-    locale: 'se_SV'
+    locale: 'sv'
     # This parameter defines the codes of the locales (languages) enabled in the application
-    app_locales: en|se_SV
+    app_locales: sv|en
     app.notifications.email_sender: anonymous@example.com
     bolt.table_prefix: bolt_
     bolt.backend_url: /salve

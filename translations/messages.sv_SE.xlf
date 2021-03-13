@@ -1,0 +1,635 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="sv-SE" trgLang="sv-SE">
+  <file id="messages.sv_SE">
+    <unit id="OnhpU4i" name="Home">
+      <segment>
+        <source>Home</source>
+        <target>Hem</target>
+      </segment>
+    </unit>
+    <unit id="Tvyg0Qx" name="About">
+      <segment>
+        <source>About</source>
+        <target>Om</target>
+      </segment>
+    </unit>
+    <unit id="kDVCElw" name="All pages">
+      <segment>
+        <source>All pages</source>
+        <target>Alla sidor</target>
+      </segment>
+    </unit>
+    <unit id="N6kNuPT" name="Current sessions">
+      <segment>
+        <source>Current sessions</source>
+        <target>Pågående sessioner</target>
+      </segment>
+    </unit>
+    <unit id="wpYC9Hd" name="Read More">
+      <segment>
+        <source>Read More</source>
+        <target>Läs Mer</target>
+      </segment>
+    </unit>
+    <unit id="SolqMUs" name="Entry 1">
+      <segment>
+        <source>Entry 1</source>
+        <target>Inlägg 1</target>
+      </segment>
+    </unit>
+    <unit id="jtsBP4S" name="Entry 2">
+      <segment>
+        <source>Entry 2</source>
+        <target>Inlägg 2</target>
+      </segment>
+    </unit>
+    <unit id="Pily_qo" name="general.phrase.read-more">
+      <segment>
+        <source>general.phrase.read-more</source>
+        <target>Läs mer</target>
+      </segment>
+    </unit>
+    <unit id="wNEwZy_" name="contenttypes.generic.overview">
+      <segment>
+        <source>contenttypes.generic.overview</source>
+        <target>Sidöversikt</target>
+      </segment>
+    </unit>
+    <unit id="ovKkXwU" name="action.edit">
+      <segment>
+        <source>action.edit</source>
+        <target>Redigera</target>
+      </segment>
+    </unit>
+    <unit id="3zlZmRK" name="action.add_user">
+      <segment>
+        <source>action.add_user</source>
+        <target>Lägg till användare</target>
+      </segment>
+    </unit>
+    <unit id="odDw0du" name="action.search">
+      <segment>
+        <source>action.search</source>
+        <target>Sök</target>
+      </segment>
+    </unit>
+    <unit id="gB.9hTu" name="general.phrase.search-ellipsis">
+      <segment>
+        <source>general.phrase.search-ellipsis</source>
+        <target>...</target>
+      </segment>
+    </unit>
+    <unit id="UNBaDz." name="general.phrase.edit">
+      <segment>
+        <source>general.phrase.edit</source>
+        <target>Redigera</target>
+      </segment>
+    </unit>
+    <unit id="AMxTho9" name="pager.previous">
+      <segment>
+        <source>pager.previous</source>
+        <target>Föregående</target>
+      </segment>
+    </unit>
+    <unit id="L_YQKUn" name="pager.next">
+      <segment>
+        <source>pager.next</source>
+        <target>Nästa</target>
+      </segment>
+    </unit>
+    <unit id="hiQXuef" name="events">
+      <segment>
+        <source>events</source>
+        <target>events</target>
+      </segment>
+    </unit>
+    <unit id="Y71wZe8" name="life">
+      <segment>
+        <source>life</source>
+        <target>livet</target>
+      </segment>
+    </unit>
+    <unit id="VL2OqWf" name="crime">
+      <segment>
+        <source>crime</source>
+        <target>krim</target>
+      </segment>
+    </unit>
+    <unit id="TZQOSTI" name="paranormal">
+      <segment>
+        <source>paranormal</source>
+        <target>paranormal</target>
+      </segment>
+    </unit>
+    <unit id="pMxrwBq" name="privacy">
+      <segment>
+        <source>privacy</source>
+        <target>privacy</target>
+      </segment>
+    </unit>
+    <unit id="NTkPVFP" name="software">
+      <segment>
+        <source>software</source>
+        <target>mjukvara</target>
+      </segment>
+    </unit>
+    <unit id="6ayxhyD" name="The other stuff">
+      <segment>
+        <source>The other stuff</source>
+        <target>Andra saker</target>
+      </segment>
+    </unit>
+    <unit id="7aLIA3c" name="caption.dashboard">
+      <segment>
+        <source>caption.dashboard</source>
+        <target>Dashboard</target>
+      </segment>
+    </unit>
+    <unit id="1xlE8ex" name="caption.content">
+      <segment>
+        <source>caption.content</source>
+        <target>Innehåll</target>
+      </segment>
+    </unit>
+    <unit id="ZO.uqIZ" name="caption.settings">
+      <segment>
+        <source>caption.settings</source>
+        <target>Inställningar</target>
+      </segment>
+    </unit>
+    <unit id="zOLL.7E" name="caption.configuration">
+      <segment>
+        <source>caption.configuration</source>
+        <target>Konfigurering</target>
+      </segment>
+    </unit>
+    <unit id="ipmA6Ah" name="caption.users_permissions">
+      <segment>
+        <source>caption.users_permissions</source>
+        <target><![CDATA[Användare & tillstånd]]></target>
+      </segment>
+    </unit>
+    <unit id="kXNBV9S" name="caption.main_configuration">
+      <segment>
+        <source>caption.main_configuration</source>
+        <target>Main-konfiguration</target>
+      </segment>
+    </unit>
+    <unit id="_w7J5rZ" name="caption.contenttypes">
+      <segment>
+        <source>caption.contenttypes</source>
+        <target>Innehållstyper</target>
+      </segment>
+    </unit>
+    <unit id="drK.0GZ" name="caption.taxonomies">
+      <segment>
+        <source>caption.taxonomies</source>
+        <target>Taxanomier</target>
+      </segment>
+    </unit>
+    <unit id="2RUXD4A" name="caption.menu_setup">
+      <segment>
+        <source>caption.menu_setup</source>
+        <target>Meny-inställning</target>
+      </segment>
+    </unit>
+    <unit id="wBKDkwl" name="caption.routing_setup">
+      <segment>
+        <source>caption.routing_setup</source>
+        <target>Route-inställning</target>
+      </segment>
+    </unit>
+    <unit id="i4cbdta" name="caption.all_configuration_files">
+      <segment>
+        <source>caption.all_configuration_files</source>
+        <target>Alla konfigureringsfiler</target>
+      </segment>
+    </unit>
+    <unit id="OpKTKAL" name="caption.maintenance">
+      <segment>
+        <source>caption.maintenance</source>
+        <target>Underhåll</target>
+      </segment>
+    </unit>
+    <unit id="mfvtHPQ" name="caption.extensions">
+      <segment>
+        <source>caption.extensions</source>
+        <target>Tillägg</target>
+      </segment>
+    </unit>
+    <unit id="2MtT_h0" name="caption.logviewer">
+      <segment>
+        <source>caption.logviewer</source>
+        <target>Loggvy</target>
+      </segment>
+    </unit>
+    <unit id="Dvu2HQx" name="caption.api">
+      <segment>
+        <source>caption.api</source>
+        <target>API</target>
+      </segment>
+    </unit>
+    <unit id="K6TmK4B" name="caption.clear_cache">
+      <segment>
+        <source>caption.clear_cache</source>
+        <target>Rensa cachen</target>
+      </segment>
+    </unit>
+    <unit id="dd5MzCM" name="caption.translations">
+      <segment>
+        <source>caption.translations</source>
+        <target><![CDATA[Översättningar & etiketter]]></target>
+      </segment>
+    </unit>
+    <unit id="wLaDaK5" name="caption.about_bolt">
+      <segment>
+        <source>caption.about_bolt</source>
+        <target>Om Bolt CMS</target>
+      </segment>
+    </unit>
+    <unit id="l4yt0BE" name="caption.file_management">
+      <segment>
+        <source>caption.file_management</source>
+        <target>Filhantering</target>
+      </segment>
+    </unit>
+    <unit id="bq6bSf4" name="caption.uploaded_files">
+      <segment>
+        <source>caption.uploaded_files</source>
+        <target>Uppladdade filer</target>
+      </segment>
+    </unit>
+    <unit id="K4D568R" name="caption.view_edit_templates">
+      <segment>
+        <source>caption.view_edit_templates</source>
+        <target>Se eller redigera twig-mallar</target>
+      </segment>
+    </unit>
+    <unit id="UZFanGF" name="about.bolt_documentation">
+      <segment>
+        <source>about.bolt_documentation</source>
+        <target>Bolt-dokumentation</target>
+      </segment>
+    </unit>
+    <unit id="b_RPpcB" name="general.greeting">
+      <segment>
+        <source>general.greeting</source>
+        <target>Hej %name%!</target>
+      </segment>
+    </unit>
+    <unit id="bmdn3u9" name="action.logout">
+      <segment>
+        <source>action.logout</source>
+        <target>Logga ut</target>
+      </segment>
+    </unit>
+    <unit id="zOfpTLD" name="action.edit_profile">
+      <segment>
+        <source>action.edit_profile</source>
+        <target>Redigera profil</target>
+      </segment>
+    </unit>
+    <unit id="k.JymqB" name="about.visit_bolt">
+      <segment>
+        <source>about.visit_bolt</source>
+        <target>Besök Bolt</target>
+      </segment>
+    </unit>
+    <unit id="wGlnx8X" name="general.phrase.search">
+      <segment>
+        <source>general.phrase.search</source>
+        <target>Sök</target>
+      </segment>
+    </unit>
+    <unit id="O_m7mx1" name="listing.placeholder_search">
+      <segment>
+        <source>listing.placeholder_search</source>
+        <target>Sök efter något...</target>
+      </segment>
+    </unit>
+    <unit id="jXAelLe" name="admin_sidebar_toggler.toggle">
+      <segment>
+        <source>admin_sidebar_toggler.toggle</source>
+        <target><![CDATA[<span class="sr-only">Toggla </span>meny]]></target>
+      </segment>
+    </unit>
+    <unit id="Gabafxx" name="admin_sidebar.toggler">
+      <segment>
+        <source>admin_sidebar.toggler</source>
+        <target>Växla bredd (sidebar)</target>
+      </segment>
+    </unit>
+    <unit id="f.rvF6y" name="action.new">
+      <segment>
+        <source>action.new</source>
+        <target>Ny</target>
+      </segment>
+    </unit>
+    <unit id="TtmWqX3" name="action.view">
+      <segment>
+        <source>action.view</source>
+        <target>Vy</target>
+      </segment>
+    </unit>
+    <unit id="pcq1NGk" name="listing_filter.button_compact">
+      <segment>
+        <source>listing_filter.button_compact</source>
+        <target>Kompakt</target>
+      </segment>
+    </unit>
+    <unit id="xIztVmp" name="listing_filter.button_expanded">
+      <segment>
+        <source>listing_filter.button_expanded</source>
+        <target>Expanderad</target>
+      </segment>
+    </unit>
+    <unit id="L0TE0M9" name="listing_table.actions.view_on_site">
+      <segment>
+        <source>listing_table.actions.view_on_site</source>
+        <target>Se på webbsidan</target>
+      </segment>
+    </unit>
+    <unit id="PoauAuK" name="listing_table.actions.status_to_publish">
+      <segment>
+        <source>listing_table.actions.status_to_publish</source>
+        <target>Ändra status till 'publicerad'</target>
+      </segment>
+    </unit>
+    <unit id="ZJxfdD6" name="listing_table.actions.status_to_held">
+      <segment>
+        <source>listing_table.actions.status_to_held</source>
+        <target>Ändra status till 'återhållen'</target>
+      </segment>
+    </unit>
+    <unit id="apyOs0o" name="listing_table.actions.status_to_draft">
+      <segment>
+        <source>listing_table.actions.status_to_draft</source>
+        <target>Ändra status till 'utkast'</target>
+      </segment>
+    </unit>
+    <unit id="5H60Xq6" name="listing_table.actions.duplicate">
+      <segment>
+        <source>listing_table.actions.duplicate</source>
+        <target>Duplicera</target>
+      </segment>
+    </unit>
+    <unit id="hR8ri.m" name="listing_table.actions.delete">
+      <segment>
+        <source>listing_table.actions.delete</source>
+        <target>Radera</target>
+      </segment>
+    </unit>
+    <unit id="5zbX1vo" name="listing_table.actions.slug">
+      <segment>
+        <source>listing_table.actions.slug</source>
+        <target>Slug</target>
+      </segment>
+    </unit>
+    <unit id="wKDOBOC" name="listing_table.actions.created_on">
+      <segment>
+        <source>listing_table.actions.created_on</source>
+        <target>Skapad den</target>
+      </segment>
+    </unit>
+    <unit id="tVX01Xl" name="listing_table.actions.published_on">
+      <segment>
+        <source>listing_table.actions.published_on</source>
+        <target>Publicerad den</target>
+      </segment>
+    </unit>
+    <unit id="kHkjS5U" name="listing_table.actions.last_modified_on">
+      <segment>
+        <source>listing_table.actions.last_modified_on</source>
+        <target>Modifierad den</target>
+      </segment>
+    </unit>
+    <unit id="Em.C0bV" name="listing_table.actions.button_edit">
+      <segment>
+        <source>listing_table.actions.button_edit</source>
+        <target>Redigera</target>
+      </segment>
+    </unit>
+    <unit id="N_0yRcH" name="action.close_alert">
+      <segment>
+        <source>action.close_alert</source>
+        <target>Stäng</target>
+      </segment>
+    </unit>
+    <unit id="BdhsE_X" name="listing_select_box.card_header.selected">
+      <segment>
+        <source>listing_select_box.card_header.selected</source>
+        <target>Vald</target>
+      </segment>
+    </unit>
+    <unit id="hTKWQ6g" name="action.delete">
+      <segment>
+        <source>action.delete</source>
+        <target>Radera</target>
+      </segment>
+    </unit>
+    <unit id="WeJxw6Z" name="action.update_all">
+      <segment>
+        <source>action.update_all</source>
+        <target>Verkställ för alla</target>
+      </segment>
+    </unit>
+    <unit id="vJwSCBO" name="title.contentlisting">
+      <segment>
+        <source>title.contentlisting</source>
+        <target>Innehållslista</target>
+      </segment>
+    </unit>
+    <unit id="JEnqOi." name="title.primary_actions">
+      <segment>
+        <source>title.primary_actions</source>
+        <target>Primära Handlingar</target>
+      </segment>
+    </unit>
+    <unit id="KfVJho2" name="action.create_new">
+      <segment>
+        <source>action.create_new</source>
+        <target>Skapa ny</target>
+      </segment>
+    </unit>
+    <unit id="wQ0WYAT" name="listing.title_sortby">
+      <segment>
+        <source>listing.title_sortby</source>
+        <target>Sortera på</target>
+      </segment>
+    </unit>
+    <unit id="hp554Ds" name="listing.option_select_sortby">
+      <segment>
+        <source>listing.option_select_sortby</source>
+        <target>Välj fält att sortera på...</target>
+      </segment>
+    </unit>
+    <unit id="IWbf2by" name="listing.title_filterby">
+      <segment>
+        <source>listing.title_filterby</source>
+        <target>Sök / Filtrera på</target>
+      </segment>
+    </unit>
+    <unit id="pn22p7q" name="listing.placeholder_filter">
+      <segment>
+        <source>listing.placeholder_filter</source>
+        <target>Nyckelord att filtrera på</target>
+      </segment>
+    </unit>
+    <unit id="ni4zApC" name="listing.button_filter">
+      <segment>
+        <source>listing.button_filter</source>
+        <target>Filtrera</target>
+      </segment>
+    </unit>
+    <unit id="n.3JZvX" name="title.contentType">
+      <segment>
+        <source>title.contentType</source>
+        <target>Innehållstyp</target>
+      </segment>
+    </unit>
+    <unit id="Hlf9c1s" name="listing.title_overview">
+      <segment>
+        <source>listing.title_overview</source>
+        <target>Översikt för</target>
+      </segment>
+    </unit>
+    <unit id="z2AgHGp" name="flash_messages.notification">
+      <segment>
+        <source>flash_messages.notification</source>
+        <target>Avisering</target>
+      </segment>
+    </unit>
+    <unit id="ruQIhH0" name="success">
+      <segment>
+        <source>success</source>
+        <target>Framgång!</target>
+      </segment>
+    </unit>
+    <unit id="GOhQBY9" name="content.deleted_successfully">
+      <segment>
+        <source>content.deleted_successfully</source>
+        <target>Innehåll har framgångsrikt raderats</target>
+      </segment>
+    </unit>
+    <unit id="HBwIQ9b" name="controller.user.subtitle">
+      <segment>
+        <source>controller.user.subtitle</source>
+        <target>Redigera användare och deras behörigheter</target>
+      </segment>
+    </unit>
+    <unit id="Iy4HXCU" name="controller.user.title">
+      <segment>
+        <source>controller.user.title</source>
+        <target>Användare och behörigheter</target>
+      </segment>
+    </unit>
+    <unit id="7cXqH5s" name="listing.title_display_name">
+      <segment>
+        <source>listing.title_display_name</source>
+        <target>Publikt alias</target>
+      </segment>
+    </unit>
+    <unit id="Ay7xZ2h" name="listing.title_username">
+      <segment>
+        <source>listing.title_username</source>
+        <target>Användarnamn</target>
+      </segment>
+    </unit>
+    <unit id="RN1tdtJ" name="listing.title_email">
+      <segment>
+        <source>listing.title_email</source>
+        <target>E-post</target>
+      </segment>
+    </unit>
+    <unit id="0pjZ.GV" name="listing.title_roles">
+      <segment>
+        <source>listing.title_roles</source>
+        <target>Roller</target>
+      </segment>
+    </unit>
+    <unit id="hXEFV1n" name="listing.title_last_seen">
+      <segment>
+        <source>listing.title_last_seen</source>
+        <target>Sessionslängd</target>
+      </segment>
+    </unit>
+    <unit id="pn7kE17" name="listing.title_last_ip">
+      <segment>
+        <source>listing.title_last_ip</source>
+        <target>Senaste IP</target>
+      </segment>
+    </unit>
+    <unit id="GZ65uOC" name="listing.title_actions">
+      <segment>
+        <source>listing.title_actions</source>
+        <target>Handlingar</target>
+      </segment>
+    </unit>
+    <unit id="Npkio79" name="listing.title_session_expires">
+      <segment>
+        <source>listing.title_session_expires</source>
+        <target>Session utgår</target>
+      </segment>
+    </unit>
+    <unit id="mmUDcto" name="listing.title_ip_address">
+      <segment>
+        <source>listing.title_ip_address</source>
+        <target>IP adress</target>
+      </segment>
+    </unit>
+    <unit id="x9qAwrz" name="listing.title_browser">
+      <segment>
+        <source>listing.title_browser</source>
+        <target>Webbläsare / plattform</target>
+      </segment>
+    </unit>
+    <unit id="HLtdhYw" name="action.save">
+      <segment>
+        <source>action.save</source>
+        <target>Spara ändringar</target>
+      </segment>
+    </unit>
+    <unit id="8zEzq8N" name="field.current_locale">
+      <segment>
+        <source>field.current_locale</source>
+        <target>Nuvarande språk</target>
+      </segment>
+    </unit>
+    <unit id="7616Os4" name="title.options">
+      <segment>
+        <source>title.options</source>
+        <target>Alternativ</target>
+      </segment>
+    </unit>
+    <unit id="FuCyk5C" name="field.status">
+      <segment>
+        <source>field.status</source>
+        <target>Status</target>
+      </segment>
+    </unit>
+    <unit id="utGAKaQ" name="status.published">
+      <segment>
+        <source>status.published</source>
+        <target>Publicerad</target>
+      </segment>
+    </unit>
+    <unit id="utGAjaQ" name="status.held">
+      <segment>
+        <source>status.held</source>
+        <target>Återhållen</target>
+      </segment>
+    </unit>
+    <unit id="utgAKaQ" name="status.timed">
+      <segment>
+        <source>status.timed</source>
+        <target>Tidsinställd</target>
+      </segment>
+    </unit>
+    <unit id="utGaKaQ" name="status.draft">
+      <segment>
+        <source>status.draft</source>
+        <target>Utkast</target>
+      </segment>
+    </unit>
+  </file>
+</xliff>
