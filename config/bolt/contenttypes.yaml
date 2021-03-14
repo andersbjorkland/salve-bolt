@@ -1,9 +1,30 @@
 # This file defines the content types on the website. See the documentation for
 # details: https://docs.bolt.cm/contenttypes/intro
 
+
+# These are contenttype templates for reusability when defining your contenttypes
+__nodes:
+    record_defaults: &record_defaults
+        title:
+            type: text
+            class: large
+            group: main
+            localize: true
+        teaser:
+            type: textarea
+            localize: true
+        image:
+            type: image
+            localize: true
+        slug:
+            type: slug
+            uses: title
+            localize: true
+
+
+
 # The Homepage content type is a singleton: There can be only one record of this
 # content type.
-
 homepage:
     name: Homepage
     singular_name: Homepage
@@ -43,7 +64,121 @@ homepage:
     singleton: true
     icon_many: "fa:home"
     icon_one: "fa:home"
+    show_in_menu: Modify Home
 
+features:
+    name: Features
+    singular_name: Feature
+    fields:
+        <<: *record_defaults
+    show_on_dashboard: true
+    locales: [ 'sv', 'en' ]
+    icon_many: "fa:check-double"
+    icon_one: "fa:check"
+    show_in_menu: Modify Home
+
+cta_buttons:
+    name: CTA Buttons
+    singular_name: CTA Button
+    fields:
+        title:
+            type: text
+            localize: true
+        solid:
+            type: checkbox
+            postfix: Check this for a button with background. Leave empty for button with only outlines
+            localize: true
+        button_color:
+            type: text
+            postfix: Add what css or tw-css class for bg or outline of button.
+        text_color:
+            type: text
+            postfix: Add what css or tw-css class for bg of button.
+        slug:
+            type: slug
+            uses: title
+    viewless: true
+    default_status: published
+    searchable: false
+    order: title
+    locales: [ 'sv', 'en' ]
+    icon_many: "fa:cubes"
+    icon_one: "fa:cube"
+    show_in_menu: Modify Home
+
+logo:
+    name: logo
+    singular_name: logo
+    fields:
+        title:
+            type: text
+        image:
+            type: image
+        slug:
+            type: slug
+            uses: title
+    icon_many: "fa:image"
+    icon_one: "fa:image"
+    show_in_menu: Modify Home
+
+colors:
+    name: colors
+    singular_name: color
+    fields:
+        name:
+            type: text
+        classcode:
+            type: text
+        slug:
+            type: slug
+            uses: name
+            group: Meta
+
+# The 'Blocks' ContentType is a so-called 'resource ContentType'. This means
+# that it can be used to manage smaller pieces of content, like the 'about us'
+# text, an 'our address' in the footer, or similar short blurbs of text.
+# For more info, see: https://docs.bolt.cm/howto/resource-contenttype
+
+blocks:
+    name: Blocks
+    singular_name: Block
+    excerpt_format: '{teaser}'
+    fields:
+        title:
+            type: text
+            class: large
+            label: Title of this Block
+            localize: true
+            group: Block
+        image:
+            type: image
+            localize: true
+        teaser:
+            type: redactor
+            localize: true
+            fixture_format: '{paragraph}'
+        content:
+            type: redactor
+            localize: true
+        contentlink:
+            type: text
+            label: Link
+            placeholder: 'contentType/slug or https://example.org/'
+            postfix: "Use this to add a link for this Homepage. This could either be an 'internal' link like <tt>page//about</tt>, if you use a contentType/slug combination. Otherwise use a proper URL, like `https://example.org`."
+            fixture_format: '{url}'
+        slug:
+            type: slug
+            uses: [ title ]
+            group: Meta
+    show_on_dashboard: true
+    viewless: true
+    default_status: published
+    searchable: false
+    order: title
+    locales: [ 'sv', 'en' ]
+    icon_many: "fa:cubes"
+    icon_one: "fa:cube"
+    show_in_menu: Modify Home
 
 # Pages can be used for the more 'static' pages on your site. This content-type
 # has a 'templateselect' field, which allows you to override the record_template
@@ -150,6 +285,7 @@ entries:
     icon_one: "fa:file-alt"
 
 
+
 # The 'People' ContentType can be used to build pages about the people in your
 # company, organisation or any other kind of team.
 
@@ -192,58 +328,12 @@ people:
     locales: [ 'en', 'sv' ]
 
 
-# The 'Blocks' ContentType is a so-called 'resource ContentType'. This means
-# that it can be used to manage smaller pieces of content, like the 'about us'
-# text, an 'our address' in the footer, or similar short blurbs of text.
-# For more info, see: https://docs.bolt.cm/howto/resource-contenttype
-
-blocks:
-    name: Blocks
-    singular_name: Block
-    excerpt_format: '{teaser}'
-    fields:
-        title:
-            type: text
-            class: large
-            label: Title of this Block
-            localize: true
-            group: Block
-        image:
-            type: image
-            localize: true
-        teaser:
-            type: redactor
-            localize: true
-            fixture_format: '{paragraph}'
-        content:
-            type: redactor
-            localize: true
-        contentlink:
-            type: text
-            label: Link
-            placeholder: 'contentType/slug or https://example.org/'
-            postfix: "Use this to add a link for this Homepage. This could either be an 'internal' link like <tt>page//about</tt>, if you use a contentType/slug combination. Otherwise use a proper URL, like `https://example.org`."
-            fixture_format: '{url}'
-        slug:
-            type: slug
-            uses: [ title ]
-            group: Meta
-    show_on_dashboard: true
-    viewless: true
-    default_status: published
-    searchable: false
-    order: title
-    locales: [ 'en', 'sv' ]
-    icon_many: "fa:cubes"
-    icon_one: "fa:cube"
-
-
 # The 'Products' ContentType can be used to manage information about the
 # products or services you (or your company, organisation) provide.
 
-products:
-    name: Products
-    singular_name: Product
+product_articles:
+    name: Product Articles
+    singular_name: Product Article
     fields:
         title:
             type: text
@@ -253,27 +343,6 @@ products:
             localize: true
             group: Block
             fixture_format: '{catchPhrase}'
-        feature_1:
-            type: text
-            variant: inline
-            localize: true
-            fixture_format: '{bs}'
-            label: "Key feature 1"
-        feature_2:
-            type: text
-            variant: inline
-            localize: true
-            fixture_format: '{bs}'
-            label: "Key feature 2"
-        feature_3:
-            type: text
-            variant: inline
-            localize: true
-            fixture_format: '{bs}'
-            label: "Key feature 3"
-        price:
-            type: text
-            fixture_format: "€ {randomDigitNotNull}0,-"
         image:
             type: image
             localize: true
@@ -296,6 +365,44 @@ products:
     locales: [ 'en', 'sv' ]
     icon_many: "fa:gifts"
     icon_one: "fa:gift"
+    show_in_menu: Products
+
+product_cards:
+    name: Product Cards
+    singular_name: Product Card
+    fields:
+        title:
+            type: text
+            class: large
+            variant: inline
+            label: Name of this product
+            localize: true
+            group: Block
+            fixture_format: '{catchPhrase}'
+        teaser:
+            type: redactor
+            localize: true
+            fixture_format: '{paragraph}'
+        slug:
+            type: slug
+            uses: [ title ]
+            group: Meta
+    relations:
+        multiple: false
+        required: true
+        label: Select a related Product
+        order: title
+        format: '{title} ({status})'
+    show_on_dashboard: true
+    viewless: false
+    default_status: published
+    searchable: true
+    order: title
+    locales: [ 'en', 'sv' ]
+    icon_many: "fa:square"
+    icon_one: "fa:square"
+    show_in_menu: Products
+
 
 # Possible field types:
 #

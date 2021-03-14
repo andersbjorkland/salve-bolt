@@ -1,14 +1,22 @@
 <!-- Header bar -->
-<header>
-    {# the values in the 'config' object are taken directly from the file app/config/config.yml #}
-    <h2><a href="{{ path('homepage') }}">{{ config.get('general/sitename') }}</a></h2>
-    {% if config.has('general/payoff') and record is defined and record|feature == 'homepage' %}
-        <p>{{ config.get('general/payoff') }}</p>
-    {% endif %}
+<header class="relative z-20 brand-blue mx-8 sm:mx-16 py-4 flex flex-col items-center">
+    {% setcontent logo = 'logo/logo-colored' %}
+
+    <div class="flex flex-col md:flex-row w-full max-w-screen-xl items-center">
+
+        {% if logo is not empty%}
+        <div id="logo-container">
+            <a aria-label="home" href="{{ path('homepage') ~ app.request.locale }}" class="flex flex-col items-start w-20">
+                <img src="{{ logo.image.path }}" alt="{{ logo.image.alt }}">
+            </a>
+        </div>
+        {% endif %}
 
     {{ menu(
         name = 'main',
         template = 'partials/_sub_menu_header.twig',
         withsubmenus = false
     ) }}
+    </div>
+
 </header>

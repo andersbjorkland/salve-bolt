@@ -762,7 +762,6 @@
         <unit id="C15MbYY" name="form.quick_select_file">
             <segment>
                 <source>form.quick_select_file</source>
-                <target>Quickly select a file to edit…</target>
                 <target>Snabbt välja en fil och redigera...</target>
             </segment>
         </unit>
