@@ -1,0 +1,112 @@
+.brand-blue {
+    color: #3C3CA5;
+}
+.brand-blue-bg {
+    background-color: #3C3CA5;
+}
+.border-brand-blue {
+    border-color: #3C3CA5;
+}
+
+.brand-purple {
+    color: #71439D;
+}
+.brand-purple-bg {
+    background-color: #71439D;
+}
+
+.brand-green {
+    color: #3CA5A5;
+}
+.brand-green-bg {
+    background-color: #3CA5A5;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display SC', serif;
+}
+
+p {
+    font-family: "Open Sans", sans-serif;
+}
+
+nav {
+    font-family: "Open Sans", sans-serif;
+}
+
+nav a:hover {
+    transform: scale(1.1);
+}
+
+#language-selector .active {
+    text-decoration: underline;
+}
+
+.cloud-bg {
+    background-image: url("../images/Cloud.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: right;
+}
+
+.diagonal-hero {
+    transform: skewX(-10deg) translateX(9vh);
+}
+
+.triangle {
+    height: 0;
+    width: 0;
+    border-left: 2rem solid transparent;
+    border-right: 2rem solid transparent;
+    border-bottom: 2rem solid;
+}
+
+.rotate-left {
+    transform-origin: bottom left;
+    margin-top: 1.8rem;
+    margin-left: 1rem;
+    transform: rotate(-45deg);
+}
+
+.rotate-right {
+    transform-origin: bottom left;
+    margin-top: 1.8rem;
+    margin-left: 1rem;
+    transform: rotate(45deg);
+}
+
+.rotate-2xright {
+    transform-origin: bottom left;
+    margin-top: -1.8rem;
+    margin-left: 0;
+    transform: rotate(90deg);
+}
+
+.fadeout {
+    animation: fadeout 500ms forwards;
+}
+
+@keyframes fadeout {
+    100% {
+        opacity: 0;
+    }
+}
+
+.dashed-bg {
+    background-image: url("../images/lg-circle-dashed.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.gradient-overlay {
+    background: linear-gradient(45deg, rgba(0,0,0,0.5), rgba(0,0,0,0));
+}
+
+.gradient-overlay:hover {
+    opacity: 0;
+}
+
+.transition-1 {
+    transition-duration: 1s;
+}

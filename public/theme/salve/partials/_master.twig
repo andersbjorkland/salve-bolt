@@ -16,13 +16,18 @@
         {%- endif -%}
     </title>
     {% include 'partials/_og_tags.twig' %}
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/tailwind.css') }}">
 
     {# Add matomo from https://matomo.org/docs/installation and enter its js-hook here. #}
 </head>
 <body class="min-h-screen overflow-x-hidden">
-
+    {% if record.contentType == "homepage" %}
+        <div class="hidden md:block w-1/2 h-screen fixed right-0 cloud-bg"></div>
+        <div class="hidden md:block bg-white w-1/2 h-screen fixed diagonal-hero" ></div>
+    {% endif %}
     {{ include('partials/_header.twig') }}
 
     <main>

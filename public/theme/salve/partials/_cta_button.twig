@@ -1,0 +1,14 @@
+{#
+ # When including this piece, make sure to do it with following syntax:
+ # {% include 'partials/_cta_button.twig' with {'text': 'some text', 'anchor': '/url', 'primaryColor': 'brand-blue', 'outline': false} %}
+#}
+
+{% if outline %}
+    <a href="{{ anchor }}" class="px-4 inline-block {{ primaryColor}} border-2 border-{{ primaryColor}} bg-white w-44 h-12 flex justify-center items-center">
+        {{ text }}
+    </a>
+{% else %}
+    <a href="#" class="px-4 inline-block {{ primaryColor}}-bg text-white w-44 h-12 flex justify-center items-center">
+        {{ text }}
+    </a>
+{% endif %}

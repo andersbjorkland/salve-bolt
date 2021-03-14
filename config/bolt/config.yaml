@@ -46,7 +46,7 @@ date_format: 'F j, Y H:i'
 #       the website, be sure to check for a theme.yaml file in your themes
 #       folder. If a template is set there, it will override the setting here.
 homepage: homepage
-homepage_template: index.twig
+homepage_template: homepage.twig
 
 # The default content for the "Not Found" (404) page. Can be an (array of) template
 # names or identifiers for records, which will be tried until a match is found.

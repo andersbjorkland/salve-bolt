@@ -3,23 +3,6 @@
 
 
 # These are contenttype templates for reusability when defining your contenttypes
-__nodes:
-    record_defaults: &record_defaults
-        title:
-            type: text
-            class: large
-            group: main
-            localize: true
-        teaser:
-            type: textarea
-            localize: true
-        image:
-            type: image
-            localize: true
-        slug:
-            type: slug
-            uses: title
-            localize: true
 
 
 
@@ -70,7 +53,21 @@ features:
     name: Features
     singular_name: Feature
     fields:
-        <<: *record_defaults
+        title:
+            type: text
+            class: large
+            group: main
+            localize: true
+        teaser:
+            type: textarea
+            localize: true
+        image:
+            type: image
+            localize: true
+        slug:
+            type: slug
+            uses: title
+            localize: true
     show_on_dashboard: true
     locales: [ 'sv', 'en' ]
     icon_many: "fa:check-double"
@@ -97,7 +94,6 @@ cta_buttons:
         slug:
             type: slug
             uses: title
-    viewless: true
     default_status: published
     searchable: false
     order: title
@@ -120,19 +116,6 @@ logo:
     icon_many: "fa:image"
     icon_one: "fa:image"
     show_in_menu: Modify Home
-
-colors:
-    name: colors
-    singular_name: color
-    fields:
-        name:
-            type: text
-        classcode:
-            type: text
-        slug:
-            type: slug
-            uses: name
-            group: Meta
 
 # The 'Blocks' ContentType is a so-called 'resource ContentType'. This means
 # that it can be used to manage smaller pieces of content, like the 'about us'
@@ -179,6 +162,19 @@ blocks:
     icon_many: "fa:cubes"
     icon_one: "fa:cube"
     show_in_menu: Modify Home
+
+colors:
+    name: colors
+    singular_name: color
+    fields:
+        name:
+            type: text
+        classcode:
+            type: text
+        slug:
+            type: slug
+            uses: name
+            group: Meta
 
 # Pages can be used for the more 'static' pages on your site. This content-type
 # has a 'templateselect' field, which allows you to override the record_template

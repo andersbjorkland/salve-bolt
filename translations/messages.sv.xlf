@@ -900,7 +900,7 @@
         <unit id="A_d5KPt" name="general.phrase.written-by-on">
             <segment>
                 <source>general.phrase.written-by-on</source>
-                <target>Skrivan av %name% den %date%.</target>
+                <target>Skriven av %name% den %date%.</target>
             </segment>
         </unit>
         <unit id="TVU.FCV" name="general.phrase.missing-about-page">
