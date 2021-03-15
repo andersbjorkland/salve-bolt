@@ -24,7 +24,7 @@
     {# Add matomo from https://matomo.org/docs/installation and enter its js-hook here. #}
 </head>
 <body class="min-h-screen overflow-x-hidden">
-    {% if record.contentType == "homepage" %}
+    {% if record|default and record.contentType == "homepage" %}
         <div class="hidden md:block w-1/2 h-screen fixed right-0 cloud-bg"></div>
         <div class="hidden md:block bg-white w-1/2 h-screen fixed diagonal-hero" ></div>
     {% endif %}
@@ -49,5 +49,7 @@
 
     {{ include('partials/_footer.twig') }}
 
+    {% block scripts %}
+    {% endblock scripts %}
 </body>
 </html>

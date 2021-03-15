@@ -1,0 +1,44 @@
+{#
+# When including this piece, make sure to do it with following syntax:
+# {% include 'partials/_feature.twig' with {'feature': featureArr, 'orientation': "left", 'iteration': 2} %}
+#}
+
+{% macro headerIllustration(iteration = 0) %}
+    {% if iteration is divisible by 3 %}
+        <div class="hidden lg:block absolute h-12 w-12 brand-green-bg -ml-5 z-0"></div>
+    {% elseif iteration is divisible by 2 %}
+        <div class="hidden lg:block absolute triangle brand-blue rotate-2xright -mt-8"></div>
+    {% else %}
+        <div class="hidden lg:block absolute triangle brand-green rotate-left mt-2 ml-0"></div>
+    {% endif %}
+{% endmacro %}
+
+{% if orientation == "left" %}
+    <div class="grid grid-cols-1 lg:grid-cols-2">
+        <div class="pb-32 pt-16 px-8 sm:px-16 lg:pb-16 relative h-64">
+            {{ _self.headerIllustration(iteration) }}
+            <h2 class="text-4xl relative">{{ feature.title|raw }}</h2>
+            <p class="mt-4 tracking-wide leading-8 font-thin">
+                {{ feature.teaser|raw }}
+            </p>
+        </div>
+        <div class="row-start-1 lg:row-start-auto overflow-y-hidden h-64 lg:h-auto">
+            <img src="{{ feature.image.path }}" alt="{{ feature.image.alt }}">
+        </div>
+    </div>
+
+{% else %}
+    <div class="grid grid-cols-1 lg:grid-cols-2">
+        <div class="overflow-y-hidden h-64 lg:h-auto">
+            <img src="{{ feature.image.path }}" alt="{{ feature.image.alt }}">
+        </div>
+        <div class="pb-32 pt-16 px-8 sm:px-16 lg:pb-16 relative h-64">
+            {{ _self.headerIllustration(iteration) }}
+            <h2 class="text-4xl relative">{{ feature.title|raw }}</h2>
+            <p class="mt-4 tracking-wide leading-8 font-thin">
+                {{ feature.teaser|raw }}
+            </p>
+        </div>
+    </div>
+
+{% endif %}

@@ -61,6 +61,9 @@ features:
         teaser:
             type: textarea
             localize: true
+        text:
+            type: redactor
+            localize: true
         image:
             type: image
             localize: true
@@ -73,6 +76,41 @@ features:
     icon_many: "fa:check-double"
     icon_one: "fa:check"
     show_in_menu: Modify Home
+
+showcases:
+    name: Showcases
+    singular_name: Showcase
+    fields:
+        title:
+            type: text
+            class: large
+            group: main
+            localize: true
+        teaser:
+            type: textarea
+            localize: true
+        text:
+            type: redactor
+            localize: true
+        image:
+            type: image
+            localize: true
+        slides:
+            type: collection
+            fields:
+                image:
+                    type: image
+                text:
+                    type: text
+            localise: true
+        slug:
+            type: slug
+            uses: title
+            localize: true
+    show_on_dashboard: true
+    locales: [ 'sv', 'en' ]
+    icon_many: "fa:shapes"
+    icon_one: "fa:shapes"
 
 cta_buttons:
     name: CTA Buttons
