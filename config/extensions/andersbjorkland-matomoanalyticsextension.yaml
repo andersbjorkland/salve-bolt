@@ -1,0 +1,2 @@
+extension-name: 'Matomo Analytics Extension'
+matomo_api_key: 'Insert Secret Key Here'

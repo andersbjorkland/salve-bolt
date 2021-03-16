@@ -48,6 +48,8 @@ date_format: 'F j, Y H:i'
 homepage: homepage
 homepage_template: homepage.twig
 
+matomo: '%env(MATOMO_API)%'
+
 # The default content for the "Not Found" (404) page. Can be an (array of) template
 # names or identifiers for records, which will be tried until a match is found.
 notfound: [ blocks/404-not-found, 'helpers/page_404.html.twig' ]

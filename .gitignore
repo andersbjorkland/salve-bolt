@@ -76,3 +76,6 @@ appveyor.yml
 /phpunit.xml
 ###< phpunit/phpunit ###
 
+config_local.yaml
+config/extensions/*_local.yaml
+

@@ -3,6 +3,13 @@
     "description": "A basic setup for Bolt CMS with languages focused on English and Swedish.",
     "type": "project",
     "license": "proprietary",
+    "version": "0.1",
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../matomo-analytics-extension"
+        }
+    ],
     "require": {
         "bobdenotter/configuration-notices": "^1.0",
         "bobdenotter/weatherwidget": "^1.1",
@@ -12,7 +19,8 @@
         "bolt/newswidget": "^1.1",
         "bolt/redactor": "^1.0",
         "bolt/themes": "^3.3",
-        "symfony/flex": "^1.6"
+        "symfony/flex": "^1.6",
+        "andersbjorkland/matomo-analytics-extension": "^0.1.2"
     },
     "autoload": {
         "psr-4": {
