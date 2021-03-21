@@ -110,3 +110,11 @@ nav a:hover {
 .transition-1 {
     transition-duration: 1s;
 }
+
+#carousel {
+    margin: auto;
+    max-height: 22rem;
+    display: flex;
+    align-items: flex-end;
+}
+

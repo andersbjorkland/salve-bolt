@@ -1,6 +1,6 @@
 {
     "andersbjorkland/matomo-analytics-extension": {
-        "version": "0.1.1"
+        "version": "0.1.6"
     },
     "api-platform/core": {
         "version": "2.1",

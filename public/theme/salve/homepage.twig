@@ -3,6 +3,7 @@
 {% setcontent ctaButtons = 'cta-buttons' orderby '-title' %}
 {% setcontent features = 'features' orderby 'id' %}
 {% setcontent showcase = 'showcase/fullt-utrustad-hemsida' %}
+{% setcontent testimonials = 'testimonials' %}
 
 {% set imageArr = [] %}
 {% for slide in showcase.slides %}
@@ -48,69 +49,54 @@
     </section>
 
     {# SHOWCASE #}
-    <section aria-label="showcase section" class="px-8 sm:px-16 py-32 flex flex-col justify-center relative bg-white z-1">
-        <div class="mx-auto w-full max-w-screen-xl relative flex flex-col">
+    <section aria-label="showcase section" class="px-8 sm:px-16 py-24 flex flex-col justify-center relative bg-white z-1">
+        <div class="mx-auto w-full max-w-screen-md relative flex flex-col">
             <div class="relative self-center">
                 <img class="hidden lg:block absolute -ml-10 h-16 w-16" src="{{ asset("images/squares.svg") }}" alt="">
                 <h2 class="inline-block text-4xl relative text-center">
                     Showcase
                 </h2>
             </div>
-            <p class="text-center mt-8 mb-16">Hemsida med målinriktad design, CMS och analytics.</p>
+            <p class="text-center mt-8 mb-2">Hemsida med målinriktad design, CMS och analytics.</p>
             <div class="flex justify-center">
                 <div class="flex flex-col lg:w-1/2">
                     <div class="h-80 overflow-hidden bg-gray-50 flex items-center">
                         <div id="carousel" class="" ></div>
                     </div>
                     <div class="h-12 mt-auto">
-                        <p class="font-light inline-block" id="carousel-text"></p>
+                        <p class="font-light text-center" id="carousel-text"></p>
                     </div>
                     <p class="text-lg mt-8">Allt detta ingår när du väljer en fullt utrustad hemsida:</p>
-                    <div class="flex flex-wrap gap-4 gap-y-1 font-light">
-                        <div class="flex gap-1 w-40">
-                            <img src="{{ asset('images/checkmark.svg') }}" alt="">
-                            <p class="mt-1">Webdesign</p>
-                        </div>
-                        <div class="flex gap-1 w-40">
-                            <img src="{{ asset('images/checkmark.svg') }}" alt="">
-                            <p class="mt-1">Webbsidor</p>
-                        </div>
-                        <div class="flex gap-1 w-40">
-                            <img src="{{ asset('images/checkmark.svg') }}" alt="">
-                            <p class="mt-1">Formulär</p>
-                        </div>
-                        <div class="flex gap-1 w-40">
-                            <img src="{{ asset('images/checkmark.svg') }}" alt="">
-                            <p class="mt-1">CMS</p>
-                        </div>
-
-                        <div class="flex gap-1 w-40">
-                            <img src="{{ asset('images/checkmark.svg') }}" alt="">
-                            <p class="mt-1">Publicering</p>
-                        </div>
-                        <div class="flex gap-1 w-40">
-                            <img src="{{ asset('images/checkmark.svg') }}" alt="">
-                            <p class="mt-1">Flerspråksstöd</p>
-                        </div>
-                        <div class="flex gap-1 w-40">
-                            <img src="{{ asset('images/checkmark.svg') }}" alt="">
-                            <p class="mt-1">Användarstöd</p>
-                        </div>
-                        <div class="flex gap-1 w-40">
-                            <img src="{{ asset('images/checkmark.svg') }}" alt="">
-                            <p class="mt-1">Analytics</p>
-                        </div>
-
-                        <div class="flex gap-1 w-40">
-                            <img src="{{ asset('images/checkmark.svg') }}" alt="">
-                            <p class="mt-1">Responsiv</p>
-                        </div>
-                        <div class="flex gap-1 w-40">
-                            <img src="{{ asset('images/checkmark.svg') }}" alt="">
-                            <p class="mt-1">SEO</p>
-                        </div>
+                    <div class="flex flex-wrap gap-4 gap-y-1 font-light m-auto">
+                        {% for component in showcase.components %}
+                            <div class="flex gap-1 w-40">
+                                <img src="{{ asset('images/checkmark.svg') }}" alt="">
+                                <p class="mt-1">{{ component }}</p>
+                            </div>
+                        {% endfor %}
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="absolute h-0.5 w-1/2 bottom-0 left-1/4 bg-gray-100"></div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section aria-label="testimonial section" class="px-8 sm:px-16 pt-16 pb-32 flex justify-center relative bg-white">
+        <div class="w-full max-w-screen-md relative m-auto">
+            <img class="hidden lg:block absolute -ml-8 -mt-4 h-24 w-24" src="{{ asset('images/triangles.svg') }}" alt="">
+            <h2 class="text-4xl relative">Våra kunder</h2>
+            <p class="mt-8 mb-16">Vi hjälper små- och medelstora företag med sin digitala utveckling. Hör vad några av våra tidigare kunder tycker.</p>
+            <div class="m-auto mt-16 max-w-screen-md flex flex-col md:flex-row flex-wrap  gap-8 items-center md:items-start lg:justify-between gap-y-16">
+                {% for testimonial in testimonials %}
+                    <div class="flex flex-col w-56 text-sm">
+                        <img class="rounded-full" src="{{ testimonial.image|thumbnail(width=300, height=300, fit="c") }}" alt="{{ testimonial.title }}">
+                        <p class="mt-4">{{ testimonial.text }}</p>
+                        <p class="mt-2 font-semibold">
+                            - {{ testimonial.title|raw }}
+                        </p>
+                    </div>
+                {% endfor %}
             </div>
         </div>
         <div class="absolute h-0.5 w-1/2 bottom-0 left-1/4 bg-gray-100"></div>
@@ -124,7 +110,8 @@
 
         const images = [
             {% for image in imageArr %}
-            {{ image|raw }},
+                {{ image|raw }}
+                {% if not loop.last %},{% endif %}
             {% endfor %}
         ];
 

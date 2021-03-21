@@ -15,24 +15,24 @@
 
 {% if orientation == "left" %}
     <div class="grid grid-cols-1 lg:grid-cols-2">
-        <div class="pb-32 pt-16 px-8 sm:px-16 lg:pb-16 relative h-64">
+        <div class="pb-32 pt-16 px-8 sm:px-16 lg:pb-16 relative lg:h-64">
             {{ _self.headerIllustration(iteration) }}
             <h2 class="text-4xl relative">{{ feature.title|raw }}</h2>
             <p class="mt-4 tracking-wide leading-8 font-thin">
                 {{ feature.teaser|raw }}
             </p>
         </div>
-        <div class="row-start-1 lg:row-start-auto overflow-y-hidden h-64 lg:h-auto">
+        <div class="row-start-1 lg:row-start-auto overflow-y-hidden md:h-64 lg:h-auto">
             <img src="{{ feature.image.path }}" alt="{{ feature.image.alt }}">
         </div>
     </div>
 
 {% else %}
     <div class="grid grid-cols-1 lg:grid-cols-2">
-        <div class="overflow-y-hidden h-64 lg:h-auto">
+        <div class="overflow-y-hidden md:h-64 lg:h-auto">
             <img src="{{ feature.image.path }}" alt="{{ feature.image.alt }}">
         </div>
-        <div class="pb-32 pt-16 px-8 sm:px-16 lg:pb-16 relative h-64">
+        <div class="pb-32 pt-16 px-8 sm:px-16 lg:pb-16 relative lg:h-64">
             {{ _self.headerIllustration(iteration) }}
             <h2 class="text-4xl relative">{{ feature.title|raw }}</h2>
             <p class="mt-4 tracking-wide leading-8 font-thin">

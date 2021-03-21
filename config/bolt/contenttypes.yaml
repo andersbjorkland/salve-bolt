@@ -77,6 +77,29 @@ features:
     icon_one: "fa:check"
     show_in_menu: Modify Home
 
+testimonials:
+    name: Testimonials
+    singular_name: Testimonial
+    fields:
+        title:
+            type: text
+            localize: true
+        text:
+            type: redactor
+            localize: true
+        image:
+            type: image
+            localize: true
+        slug:
+            type: slug
+            uses: title
+            localize: true
+    show_on_dashboard: true
+    locales: [ 'sv', 'en' ]
+    icon_many: "fa:users"
+    icon_one: "fa:user"
+    show_in_menu: Modify Home
+
 showcases:
     name: Showcases
     singular_name: Showcase
@@ -103,6 +126,11 @@ showcases:
                 text:
                     type: text
             localise: true
+        components:
+            type: collection
+            fields:
+                text:
+                    type: text
         slug:
             type: slug
             uses: title
@@ -249,12 +277,14 @@ pages:
         slug:
             type: slug
             uses: title
+            localize: true
             group: Meta
         template:
             type: templateselect
             filter: '/^[^_].*\.twig$/'
     taxonomy: [ groups ]
-    locales: [ 'en', 'sv' ]
+    locales: [ 'sv', 'en' ]
+    record_route: pages
     records_per_page: 5
     order: id
 

@@ -24,7 +24,34 @@
 <nav class="mt-4 mt:mt-0 md:ml-auto pb-1 flex flex-col items-end">
     <div id="language-selector" class="md:mt-8 text-sm order-2 md:order-1">
         {% for locale in locales() %}
-            <a id="swedish-selector" class="{{ locale.current ? 'active': '' }}" href="{{ locale.link }}">{{ locale.emoji }} {{ locale.localizedname }}</a>
+            {% if '?edit_locale' in locale.link %}
+                {% set linkArr = locale.link|split('?') %}
+                {% if '/' in linkArr[0] %}
+                    {% set targetLink = linkArr[0]|split('/') %}
+                    {% if targetLink|length > 2 %}
+                        {% set targetLink = targetLink[2] %}
+                    {% else %}
+                        {% set targetLink = targetLink[1] %}
+                    {% endif %}
+                {% else %}
+                    {% set targetLink = linkArr[0] %}
+                {% endif %}
+
+                {# Default locale has a shorter link than other locales - which has to have locale included. #}
+                {% if locale.code in app.request.defaultLocale %}
+                    {% set localeLink = '/' ~ targetLink %}
+                {% else %}
+                    {% set localeLink = '/' ~ locale.code ~ '/' ~ targetLink %}
+                {% endif %}
+
+            {% else %}
+                {% set localeLink = locale.link %}
+            {% endif %}
+            {% if localeLink == '/' ~ app.request.defaultLocale ~ '/' %}
+                {# For link that only redirects to default locale, make it a short url. #}
+                {% set localeLink = "/" %}
+            {% endif %}
+            <a id="swedish-selector" class="{{ locale.current ? 'active': '' }}" href="{{ localeLink }}">{{ locale.emoji }} {{ locale.localizedname }}</a>
         {% endfor %}
     </div>
 
