@@ -1,0 +1,22 @@
+extension_name: 'Matomo Analytics Extension'
+
+# Adjust here if you only want authorized users to access charts from your Matomo Analytics instance.
+authorized_only: true
+
+# Enter your Matomo domain. Example: 'https://matomo.example.com'
+matomo_domain: 'https://demo.matomo.org/'
+
+# The Matomo ID for website being tracked.
+# If only one is being tracked then assume ID=1.
+# The default here (3) is for demo site on demo.matomo.org
+# See https://developer.matomo.org/api-reference/reporting-api-metadata#static-image-graphs
+matomo_site_id: 3
+
+# Insert Secret API Token for your Matomo domain.
+# See https://matomo.org/faq/general/faq_114/
+matomo_api_token: 'anonymous'
+
+# Choose method for fetching data. Method dictates types of data.
+# See a list on available types/methods on:
+# https://developer.matomo.org/api-reference/reporting-api#api-method-list
+matomo_method: 'UserCountry.getCountry'

@@ -27,6 +27,11 @@
     {% if record|default and record.contentType == "homepage" %}
         <div class="hidden md:block w-1/2 h-screen fixed right-0 cloud-bg"></div>
         <div class="hidden md:block bg-white w-1/2 h-screen fixed diagonal-hero" ></div>
+    {% elseif record|default and record.contentType == "pages" %}
+        <div class="hidden lg:block w-1/2  absolute right-0 bg-pink-100 p-4">
+            <img class="py-40 m-auto top-36" src="{{ record|image }}" alt="{{ record.image.alt }}">
+        </div>
+        <div class="hidden lg:block bg-white w-1/2 h-screen fixed"></div>
     {% endif %}
     {{ include('partials/_header.twig') }}
 
@@ -41,7 +46,7 @@
 
             {{ widgets('main_bottom') }}
 
-        {% endblock body %}
+    {% endblock body %}
     </main>
 
     {% block aside %}

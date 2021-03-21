@@ -1,0 +1,45 @@
+{% extends 'partials/_master.twig' %}
+
+{% setcontent ctaButtons = 'cta-buttons' orderby '-title' %}
+
+{% block main %}
+    {# HERO SECTION #}
+    <section aria-label="hero section" class="flex justify-center">
+        <div class="w-full max-w-screen-xl">
+            <div class="brand-blue min-h-96 pb-16 lg:grid lg:grid-cols-2">
+                <div class="m-auto py-8 md:py-28 px-8 sm:px-16  max-w-screen-sm relative z-10">
+                    <h1 class=" text-3xl md:text-4xl font-bold">{{ page.title }}</h1>
+
+                    <div id="hero-text-container" class="mt-4 tracking-wide leading-6 max-w-md flex flex-col gap-4">
+                        {{ page.hero|raw }}
+                    </div>
+                    {% if page.title|lower == "produkter" or page.title|lower == "products" %}
+                        <div class="mt-8 md:mt-16 flex gap-4">
+                            {% for cta in ctaButtons %}
+                                {% include 'partials/_cta_button.twig' with {'text': cta.title, 'anchor': '#', 'primaryColor': cta.button_color, 'outline': cta.solid} %}
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% if page.title|lower == "produkter" or page.title|lower == "products" %}
+        {% include 'partials/_products_page.twig' %}
+    {% else %}
+        <section aria-label="content section" class="flex justify-center">
+            <div class="w-full max-w-screen-xl">
+                {{ page.body }}
+            </div>
+        </section>
+    {% endif %}
+
+{% endblock %}
+
+{% block scripts %}
+    {% if page.title|lower == "produkter" or page.title|lower == "products" %}
+        <script src="https://kit.fontawesome.com/e03440966b.js" crossorigin="anonymous"></script>
+    {% endif %}
+{% endblock %}

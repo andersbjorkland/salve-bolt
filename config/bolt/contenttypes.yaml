@@ -270,6 +270,10 @@ pages:
             type: image
             localize: true
             label: Highlighted image
+        hero:
+            type: redactor
+            localize: true
+            height: 300px
         body:
             type: redactor
             localize: true
@@ -344,7 +348,7 @@ entries:
     default_status: published
     order: -publishedAt
     records_per_page: 10
-    locales: [ 'en', 'sv' ]
+    locales: [ 'sv', 'en' ]
     icon_many: "fa:file-alt"
     icon_one: "fa:file-alt"
 
@@ -407,6 +411,10 @@ product_articles:
             localize: true
             group: Block
             fixture_format: '{catchPhrase}'
+        faicon:
+            type: text
+            label: Font Awesome class
+            placeholder: 'fas fa-desktop'
         image:
             type: image
             localize: true
@@ -426,46 +434,10 @@ product_articles:
     default_status: published
     searchable: false
     order: title
-    locales: [ 'en', 'sv' ]
+    locales: [ 'sv', 'en' ]
     icon_many: "fa:gifts"
     icon_one: "fa:gift"
-    show_in_menu: Products
 
-product_cards:
-    name: Product Cards
-    singular_name: Product Card
-    fields:
-        title:
-            type: text
-            class: large
-            variant: inline
-            label: Name of this product
-            localize: true
-            group: Block
-            fixture_format: '{catchPhrase}'
-        teaser:
-            type: redactor
-            localize: true
-            fixture_format: '{paragraph}'
-        slug:
-            type: slug
-            uses: [ title ]
-            group: Meta
-    relations:
-        multiple: false
-        required: true
-        label: Select a related Product
-        order: title
-        format: '{title} ({status})'
-    show_on_dashboard: true
-    viewless: false
-    default_status: published
-    searchable: true
-    order: title
-    locales: [ 'en', 'sv' ]
-    icon_many: "fa:square"
-    icon_one: "fa:square"
-    show_in_menu: Products
 
 
 # Possible field types:

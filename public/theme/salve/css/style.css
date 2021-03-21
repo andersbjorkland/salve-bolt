@@ -38,6 +38,11 @@ nav a:hover {
     transform: scale(1.1);
 }
 
+main {
+    /*  min-height: calc(100vh - 13.25rem); */
+    min-height: 100vh;
+}
+
 #language-selector .active {
     text-decoration: underline;
 }
@@ -116,5 +121,10 @@ nav a:hover {
     max-height: 22rem;
     display: flex;
     align-items: flex-end;
+}
+
+.product-card {
+    min-height: 20rem;
+    height: auto;
 }
 
