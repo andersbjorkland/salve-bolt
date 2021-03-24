@@ -13,13 +13,6 @@
                     <div id="hero-text-container" class="mt-4 tracking-wide leading-6 max-w-md flex flex-col gap-4">
                         {{ page.hero|raw }}
                     </div>
-                    {% if page.title|lower == "produkter" or page.title|lower == "products" %}
-                        <div class="mt-8 md:mt-16 flex gap-4">
-                            {% for cta in ctaButtons %}
-                                {% include 'partials/_cta_button.twig' with {'text': cta.title, 'anchor': '#', 'primaryColor': cta.button_color, 'outline': cta.solid} %}
-                            {% endfor %}
-                        </div>
-                    {% endif %}
 
                 </div>
             </div>
@@ -35,6 +28,7 @@
             </div>
         </section>
     {% endif %}
+
 
 {% endblock %}
 

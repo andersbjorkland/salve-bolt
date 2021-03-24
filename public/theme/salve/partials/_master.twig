@@ -23,6 +23,7 @@
 
     {# Add matomo from https://matomo.org/docs/installation and enter its js-hook here. #}
 </head>
+
 <body class="min-h-screen overflow-x-hidden">
     {% if record|default and record.contentType == "homepage" %}
         <div class="hidden md:block w-1/2 h-screen fixed right-0 cloud-bg"></div>
@@ -35,7 +36,13 @@
     {% endif %}
     {{ include('partials/_header.twig') }}
 
+
+{% if showAside is defined %}
+<div class="lg:grid lg:grid-cols-3">
+    <main class="col-span-2">
+{% else %}
     <main>
+{% endif %}
     {% block body %}
 
 
@@ -51,6 +58,10 @@
 
     {% block aside %}
     {% endblock aside %}
+
+{% if showAside is defined %}
+</div>
+{% endif %}
 
     {{ include('partials/_footer.twig') }}
 

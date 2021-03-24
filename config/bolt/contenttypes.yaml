@@ -147,6 +147,11 @@ cta_buttons:
         title:
             type: text
             localize: true
+        href:
+            type: text
+            default: "#"
+            postfix: Add target for link button. Can be to an anchor or a page.
+            localize: true
         solid:
             type: checkbox
             postfix: Check this for a button with background. Leave empty for button with only outlines
@@ -304,9 +309,9 @@ pages:
 # The 'order' is set to '-datepublish', which means that newer entries will be
 # shown above older entries.
 
-entries:
-    name: Entries
-    singular_name: Entry
+blog:
+    name: Blog
+    singular_name: Blog
     fields:
         title:
             type: text
@@ -343,7 +348,7 @@ entries:
             required: false
     taxonomy: [ categories, tags, groups ]
     record_template: entry.twig
-    listing_template: listing.twig
+    listing_template: blog.twig
     listing_records: 10
     default_status: published
     order: -publishedAt
@@ -393,7 +398,7 @@ people:
             uses: [ name ]
     icon_one: fa:user
     icon_many: fa:users
-    locales: [ 'en', 'sv' ]
+    locales: [ 'sv', 'en' ]
 
 
 # The 'Products' ContentType can be used to manage information about the

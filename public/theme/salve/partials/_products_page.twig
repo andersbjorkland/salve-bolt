@@ -23,10 +23,12 @@
 
                     </div>
                 </div>
-                <div class="absolute bottom-0 brand-blue-bg h-8 w-full z-10"></div>
+                <div class="absolute bottom-0 brand-blue-bg h-8 w-screen z-10"></div>
+
                 <div class="absolute left-1/2 bottom-32 lg:bottom-0 w-24 h-24">
                     <img class="absolute -left-0.5 overflow-y-hidden" src="{{ asset('images/dashed-line.svg') }}" alt="">
                 </div>
+
             </section>
 
             <section aria-label="features section" class="px-8 sm:px-16 pt-16 pb-32 flex justify-center relative z-20 bg-white">
@@ -37,12 +39,12 @@
                     <h2 class="text-4xl text-white pt-3.5  relative text-center -top-28">Komponenter</h2>
                     <div class="flex flex-wrap justify-evenly gap-8 mt-32 dashed-bg pt-8">
         {% else %}
-            <!-- CARD -->
-            <div class="flex flex-col gap-4 w-56 shadow-md p-6 bg-white product-card">
-                <!-- card-header -->
-                <div class="flex gap-2 items-baseline text-yellow-600"><i class="{{ product.faicon }}"></i><h3>{{ product.title }}</h3></div>
-                <p class="text-sm">{{ product.teaser|striptags }}</p>
-            </div>
+                        <!-- CARD -->
+                        <div class="flex flex-col gap-4 w-56 shadow-md p-6 bg-white product-card">
+                            <!-- card-header -->
+                            <div class="flex gap-2 items-baseline text-yellow-600"><i class="{{ product.faicon }}"></i><h3>{{ product.title }}</h3></div>
+                            <p class="text-sm">{{ product.teaser|striptags }}</p>
+                        </div>
         {% endif %}
         {% if loop.last %}
                     </div>
@@ -51,4 +53,5 @@
             </section>
         {% endif %}
     {% endfor %}
+    {% include 'partials/_contact_section.twig' %}
 {% endif %}

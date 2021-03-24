@@ -1,0 +1,86 @@
+{% extends 'partials/_master.twig' %}
+
+{% block main %}
+    <section aria-label="hero section" class="flex justify-center">
+        <div class="w-full max-w-screen-lg">
+            <div class="py-8 md:py-20 px-8 sm:px-16  max-w-screen-sm relative z-10">
+                <h1 class="text-5xl font-bold">Blog</h1>
+            </div>
+        </div>
+    </section>
+
+    {% for post in blog %}
+
+        {# Get the designated author #}
+        {% set relatedrecords = post|related %}
+        {% if relatedrecords is not empty %}
+            {% set authors = relatedrecords|filter(rec => rec.contentType == "people") %}
+            {% if authors is not empty %}
+                {% set author = authors|first %}
+                {% set author = '<a href="' ~ author|link ~ '">' ~ author.name ~ '</a>' %}
+            {% else %}
+                {% set author = post.author.displayName %}
+            {% endif %}
+        {% else %}
+            {% set author = post.author.displayName %}
+        {% endif %}
+
+        {% if loop.first %}
+        
+
+        <!-- FEATURED POST -->
+        <section aria-label="featured section" class="flex justify-center pb-12">
+            <div class="px-8 sm:px-16 pb-8 max-w-screen-lg relative z-10 lg:grid lg:grid-cols-2 lg:gap-4">
+                <img src="{{ post|image }}" alt="{{ post.image.alt }}">
+                <div>
+                    <div class="flex gap-4 font-thin text-sm my-4 lg:mt-0">
+                    {% if post|taxonomies['tags'] is defined %}
+                        {% for tag in post|taxonomies['tags'] %}
+                            <a href="{{ tag|link }}"><p>{{ tag.name }}</p></a>
+                        {% endfor %}
+                    {% endif %}
+                    </div>
+                    <h2 class="text-3xl font-bold">{{ post.title }}</h2>
+                    <p class="text-sm font-thin mb-4"><time>{{ post.datepublished|localdate('l j F Y')|capitalize }}</time>, av {{ author|raw }}</p>
+                    <p class="mb-4">{{ post.teaser }}</p>
+                    <a class="text-blue-800 font-semibold underline" href="{{ post|link }}">Läs mer</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Listings of posts -->
+        <section aria-label="posts section" class="flex justify-center pb-32">
+            <div class="px-4 sm:px-12 pb-8 w-full max-w-screen-lg relative z-10 flex">
+                <div class="flex flex-wrap justify-start w-full">
+        {% else %}
+
+
+                    <!-- card -->
+                    <div class="sm:w-1/3 max-w-md min-w-min p-4">
+                        <div class="flex gap-2 font-thin text-xs my-2">
+                        {% if post|taxonomies['tags'] is defined %}
+                            {% for tag in post|taxonomies['tags'] %}
+                                <a href="{{ tag|link }}"><p>{{ tag.name }}</p></a>
+                            {% endfor %}
+                        {% endif %}     
+                        </div>
+                        <div class="relative">
+                            <!-- img overlay -->
+                            <img class="w-full overflow-y-hidden" src="{{ post|image }}" alt="{{ post.image.alt }}">
+                            <div class="absolute top-0 h-full w-full gradient-overlay transition-1"></div>
+                        </div>
+                        <h2 class="text-2xl">{{ post.title }}</h2>
+                        <p class="text-xs font-thin mb-4"><time>{{ post.datepublished|localdate('l j F Y')|capitalize }}</time>, av {{ author|raw }}</p>
+                        <p class="text-sm">
+                            {{ post.teaser }}
+                        </p>
+                        <a class="text-blue-800 font-semibold underline" href="{{ post|link }}">Läs mer</a>
+                    </div>      
+
+
+        {% endif %}
+    {% endfor %}
+                </div>
+            </div>
+        </section>
+{% endblock %}

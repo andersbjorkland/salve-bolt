@@ -104,6 +104,7 @@ main {
     background-size: contain;
 }
 
+
 .gradient-overlay {
     background: linear-gradient(45deg, rgba(0,0,0,0.5), rgba(0,0,0,0));
 }
@@ -128,3 +129,75 @@ main {
     height: auto;
 }
 
+form.boltforms {
+    width: 80%;
+    min-width: 12rem;
+    padding: 2rem;
+    background-color: white;
+
+    --tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
+#contact {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+#contact > div {
+    display: flex;
+    flex-direction: column;
+}
+
+#contact > div > label {
+    font-weight: 600;
+    color: #3C3CA5;
+}
+
+#contact > div > input {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    border-bottom-width: 2px;
+    border-color: rgba(191, 219, 254, 1);
+}
+
+#contact button {
+    background-color: #3C3CA5;
+    color: white;
+    padding: 0.5rem 1rem;
+    width: 5rem;
+    margin-left: auto;
+
+}
+
+#contact select {
+    outline: solid 2px #cfe4fe;
+}
+
+#contact_needreply {
+    width: 10rem;
+}
+
+.author-element {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.author-element img {
+    border-radius: 50%;
+}
+
+.body-content {
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.5rem;
+
+    margin-bottom: 1rem;
+}
+
+.link:hover {
+    opacity: 0.8;
+}

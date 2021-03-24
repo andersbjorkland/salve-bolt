@@ -27,7 +27,7 @@
                     </p>
                     <div class="mt-8 md:mt-16 flex gap-4">
                         {% for cta in ctaButtons %}
-                            {% include 'partials/_cta_button.twig' with {'text': cta.title, 'anchor': '#', 'primaryColor': cta.button_color, 'outline': cta.solid} %}
+                            {% include 'partials/_cta_button.twig' with {'text': cta.title, 'anchor': cta.href, 'primaryColor': cta.button_color, 'solid': cta.solid} %}
                         {% endfor %}
                     </div>
                 </div>
@@ -81,7 +81,7 @@
         <div class="absolute h-0.5 w-1/2 bottom-0 left-1/4 bg-gray-100"></div>
     </section>
 
-    <!-- TESTIMONIALS -->
+    {# TESTIMONIALS #}
     <section aria-label="testimonial section" class="px-8 sm:px-16 pt-16 pb-32 flex justify-center relative bg-white">
         <div class="w-full max-w-screen-md relative m-auto">
             <img class="hidden lg:block absolute -ml-8 -mt-4 h-24 w-24" src="{{ asset('images/triangles.svg') }}" alt="">
@@ -101,6 +101,9 @@
         </div>
         <div class="absolute h-0.5 w-1/2 bottom-0 left-1/4 bg-gray-100"></div>
     </section>
+
+    {# Contact Section #}
+    {% include 'partials/_contact_section.twig' %}
 {% endblock %}
 
 {% block scripts %}

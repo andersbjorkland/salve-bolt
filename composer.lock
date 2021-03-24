@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8efaea4ef029df13c5ab867cd3e07b7c",
+    "content-hash": "0f5e57d55b4b4983933503320876faa7",
     "packages": [
         {
             "name": "andersbjorkland/matomo-analytics-extension",
@@ -738,6 +738,55 @@
                 }
             ],
             "time": "2021-02-26T11:31:47+00:00"
+        },
+        {
+            "name": "bolt/forms",
+            "version": "1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bolt/forms.git",
+                "reference": "54101c795f1e2fa4697f6512c5569101cbaae162"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bolt/forms/zipball/54101c795f1e2fa4697f6512c5569101cbaae162",
+                "reference": "54101c795f1e2fa4697f6512c5569101cbaae162",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": ">=7.2.9",
+                "twig/twig": "^2.12 | ^3.0"
+            },
+            "require-dev": {
+                "bolt/core": "^4.1",
+                "symplify/easy-coding-standard": "^8.3"
+            },
+            "type": "bolt-extension",
+            "extra": {
+                "entrypoint": "Bolt\\BoltForms\\Extension"
+            },
+            "autoload": {
+                "psr-4": {
+                    "Bolt\\BoltForms\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bob den Otter",
+                    "email": "bobdenotter@gmail.com"
+                }
+            ],
+            "description": "📦 This Bolt extension can be used to handle forms in your Bolt 4 project.",
+            "support": {
+                "issues": "https://github.com/bolt/forms/issues",
+                "source": "https://github.com/bolt/forms/tree/1.3.0"
+            },
+            "time": "2021-03-18T12:18:37+00:00"
         },
         {
             "name": "bolt/newswidget",

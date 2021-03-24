@@ -7,5 +7,77 @@
         <target>general.phrase.read-more</target>
       </segment>
     </unit>
+    <unit id="CvNi1GD" name="Name">
+      <segment>
+        <source>Name</source>
+        <target>Name</target>
+      </segment>
+    </unit>
+    <unit id="CvNi1gC" name="bolt.form.name.placeholder">
+      <segment>
+        <source>bolt.form.name.placeholder</source>
+        <target>Your name...</target>
+      </segment>
+    </unit>
+    <unit id="CvNi3Gc" name="Email">
+      <segment>
+        <source>Email</source>
+        <target>Email</target>
+      </segment>
+    </unit>
+    <unit id="CvNi3Ga" name="bolt.form.email.placeholder">
+      <segment>
+        <source>bolt.form.email.placeholder</source>
+        <target>Your email address...</target>
+      </segment>
+    </unit>
+    <unit id="CvNj3GD" name="Message">
+      <segment>
+        <source>Message</source>
+        <target>Message</target>
+      </segment>
+    </unit>
+    <unit id="CvKj3GD" name="bolt.form.message.placeholder">
+      <segment>
+        <source>bolt.form.message.placeholder</source>
+        <target>What's your message...</target>
+      </segment>
+    </unit>
+    <unit id="CvNh3GD" name="Contact Back">
+      <segment>
+        <source>Contact Back</source>
+        <target>Do you want to be contacted back?</target>
+      </segment>
+    </unit>
+    <unit id="CuNi3GD" name="bolt.form.submit">
+      <segment>
+        <source>Submit</source>
+        <target>Submit</target>
+      </segment>
+    </unit>
+    <unit id="CyNi3GD" name="Successfully sent!">
+      <segment>
+        <source>Successfully sent!</source>
+        <target>Successfully sent!</target>
+      </segment>
+    </unit>
+    <unit id="CyMi3GD" name="Could not be sent">
+      <segment>
+        <source>Could not be sent</source>
+        <target>Could not be sent</target>
+      </segment>
+    </unit>
+    <unit id="CyMi8GD" name="Yes">
+      <segment>
+        <source>Yes</source>
+        <target>Yes</target>
+      </segment>
+    </unit>
+    <unit id="CyMi9GD" name="No">
+      <segment>
+        <source>No</source>
+        <target>No</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

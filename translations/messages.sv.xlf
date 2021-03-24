@@ -271,7 +271,7 @@
             </notes>
             <segment>
                 <source>field.createdAt</source>
-                <target>Skapad den</target>
+                <target>Skapad</target>
             </segment>
         </unit>
         <unit id="eVkSIKu" name="field.modifiedAt">
@@ -281,7 +281,7 @@
             </notes>
             <segment>
                 <source>field.modifiedAt</source>
-                <target>Modifierad den</target>
+                <target>Modifierad</target>
             </segment>
         </unit>
         <unit id="3gdi1dy" name="field.publishedAt">
@@ -290,7 +290,7 @@
             </notes>
             <segment>
                 <source>field.publishedAt</source>
-                <target>Publicerad den</target>
+                <target>Publicerad</target>
             </segment>
         </unit>
         <unit id="eN7IfEL" name="field.depublishedAt">
@@ -299,7 +299,7 @@
             </notes>
             <segment>
                 <source>field.depublishedAt</source>
-                <target>Avpublicerad den</target>
+                <target>Avpublicerad</target>
             </segment>
         </unit>
         <unit id="VKhfRZB" name="field.title">
@@ -2605,6 +2605,84 @@
             <segment>
                 <source>action.refresh</source>
                 <target>Uppdatera</target>
+            </segment>
+        </unit>
+        <unit id="CvNi1GD" name="Name">
+            <segment>
+                <source>Name</source>
+                <target>Namn</target>
+            </segment>
+        </unit>
+        <unit id="CvNi1gC" name="bolt.form.name.placeholder">
+            <segment>
+                <source>bolt.form.name.placeholder</source>
+                <target>Ditt namn...</target>
+            </segment>
+        </unit>
+        <unit id="CvNi3Gc" name="Email">
+            <segment>
+                <source>Email</source>
+                <target>E-post</target>
+            </segment>
+        </unit>
+        <unit id="CvNi3Ga" name="bolt.form.email.placeholder">
+            <segment>
+                <source>bolt.form.email.placeholder</source>
+                <target>Din e-post adress...</target>
+            </segment>
+        </unit>
+        <unit id="CvNj3GD" name="Message">
+            <segment>
+                <source>Message</source>
+                <target>Meddelande</target>
+            </segment>
+        </unit>
+        <unit id="CvKj3GD" name="bolt.form.message.placeholder">
+            <segment>
+                <source>bolt.form.message.placeholder</source>
+                <target>Vad är du intresserad av?</target>
+            </segment>
+        </unit>
+        <unit id="CvNh3GD" name="Contact Back">
+            <segment>
+                <source>Contact Back</source>
+                <target>Vill du bli kontaktad?</target>
+            </segment>
+        </unit>
+        <unit id="CuNi3GD" name="bolt.form.submit">
+            <segment>
+                <source>Submit</source>
+                <target>Skicka</target>
+            </segment>
+        </unit>
+        <unit id="CyNi3GD" name="Successfully sent!">
+            <segment>
+                <source>Successfully sent!</source>
+                <target>Meddelandet har skickats!</target>
+            </segment>
+        </unit>
+        <unit id="CyMi3GD" name="Could not be sent">
+            <segment>
+                <source>Could not be sent</source>
+                <target>Det finns fel i formuläret, vänligen fixa och försök skicka igen</target>
+            </segment>
+        </unit>
+        <unit id="CyMi8GD" name="Yes">
+            <segment>
+                <source>Yes</source>
+                <target>Ja</target>
+            </segment>
+        </unit>
+        <unit id="CyMi9GD" name="No">
+            <segment>
+                <source>No</source>
+                <target>Nej</target>
+            </segment>
+        </unit>
+        <unit id="Cvej3GD" name="salve.related.subjects">
+            <segment>
+                <source>salve.related.subjects</source>
+                <target>Relaterade ämnen</target>
             </segment>
         </unit>
     </file>

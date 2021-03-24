@@ -1,0 +1,14 @@
+<section aria-label="contact section" class="px-8 sm:px-16 pt-16 pb-32 flex justify-center relative bg-white">
+    <img class="hidden lg:block absolute right-0 h-full" src="{{ asset('images/dashed-cross.svg') }}" alt="">
+    <div class="w-full max-w-screen-md m-auto relative">
+        <h2 class="text-4xl relative text-center">Kontakta oss</h2>
+        <p class=" mt-8 mb-16">
+            Skaffa en hemsida för ert företag. Kanske har ni en tydlig bild av vad ni behöver, då kan vi hjälpa er att realisera den.
+            Eller kanske har er idé inte hunnit utkristallisera sig än, då kan vi hjälpa er att utforma den.
+            Kontakta oss idag så kan vi utforma en plan tillsammans.
+        </p>
+        <div id="contact-container" class="m-auto mt-16 max-w-screen-md flex flex-wrap justify-center gap-y-16">
+            {{ boltform('contact') }}
+        </div>
+    </div>
+</section>
