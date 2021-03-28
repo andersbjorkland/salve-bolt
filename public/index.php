@@ -21,7 +21,7 @@ if (strpos($_SERVER['SERVER_NAME'], 'localhost') !== false
 
 require $vendors;
 
-(new Dotenv())->bootEnv($envs);
+(new Dotenv())->loadEnv($envs);
 
 // The check is to ensure we don't use .env in production
 if (! isset($_SERVER['APP_ENV'])) {

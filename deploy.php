@@ -24,9 +24,10 @@ set('allow_anonymous_stats', false);
 
 // Hosts
 
-host('horseish')
+host('salve')
     ->roles('app')
-    ->set('deploy_path', '/customers/b/b/f/horseish.online/httpd.private/bolt');
+    //->set('deploy_path', '/home/salve.digital/bolt');
+    ->set('deploy_path', '/customers/f/9/d/salve.digital/httpd.private/bolt');
 
 // Tasks
 
