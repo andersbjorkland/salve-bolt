@@ -7,7 +7,21 @@ use Symfony\Component\ErrorHandler\Debug;
 use Symfony\Component\Dotenv\Dotenv;
 use Symfony\Component\HttpFoundation\Request;
 
-require __DIR__.'/../vendor/autoload.php';
+$vendors = '';
+$envs = '';
+
+if (strpos($_SERVER['SERVER_NAME'], 'localhost') !== false
+    || strpos($_SERVER['SERVER_NAME'], '127.0.0.1') !== false) {
+    $vendors =  dirname(__DIR__).'/vendor/autoload.php';
+    $envs = dirname(__DIR__).'/.env';
+} else {
+    $vendors = dirname( __DIR__ ) . '/httpd.private/bolt/release/vendor/autoload.php';
+    $envs    = dirname( __DIR__ ) . '/httpd.private/bolt/release/.env';
+}
+
+require $vendors;
+
+(new Dotenv())->bootEnv($envs);
 
 // The check is to ensure we don't use .env in production
 if (! isset($_SERVER['APP_ENV'])) {
