@@ -2651,6 +2651,12 @@
         </unit>
         <unit id="CuNi3GD" name="bolt.form.submit">
             <segment>
+                <source>bolt.form.submit</source>
+                <target>Skicka</target>
+            </segment>
+        </unit>
+        <unit id="CuNi0dD" name="Submit">
+            <segment>
                 <source>Submit</source>
                 <target>Skicka</target>
             </segment>
@@ -2683,6 +2689,42 @@
             <segment>
                 <source>salve.related.subjects</source>
                 <target>Relaterade ämnen</target>
+            </segment>
+        </unit>
+        <unit id="Cvej3GD" name="product-article">
+            <segment>
+                <source>product-article</source>
+                <target>produkt-artikel</target>
+            </segment>
+        </unit>
+        <unit id="Cvel3GD" name="salve.products.components">
+            <segment>
+                <source>salve.products.components</source>
+                <target>Komponenter</target>
+            </segment>
+        </unit>
+        <unit id="Dvel3GD" name="salve.contact.title">
+            <segment>
+                <source>salve.contact.title</source>
+                <target>Kontakt</target>
+            </segment>
+        </unit>
+        <unit id="Fhel3GD" name="salve.contact.text">
+            <segment>
+                <source>salve.contact.text</source>
+                <target>Skaffa en hemsida för ert företag. Kanske har ni en tydlig bild av vad ni behöver, då kan vi hjälpa er att realisera den. Eller kanske har er idé inte hunnit utkristallisera sig än, då kan vi hjälpa er att utforma den. Kontakta oss idag så kan vi utforma en plan tillsammans.</target>
+            </segment>
+        </unit>
+        <unit id="Fhel3oW" name="salve.testimonials.title">
+            <segment>
+                <source>salve.testimonials.title</source>
+                <target>Våra kunder</target>
+            </segment>
+        </unit>
+        <unit id="Fhel3pw" name="salve.testimonials.text">
+            <segment>
+                <source>salve.testimonials.text</source>
+                <target>Vi hjälper små- och medelstora företag med sin digitala utveckling. Hör vad några av våra tidigare kunder tycker.</target>
             </segment>
         </unit>
     </file>

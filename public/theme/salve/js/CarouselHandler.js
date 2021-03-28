@@ -1,11 +1,6 @@
 const CarouselHandler = (images) => {
-    console.log("WAS IMPORTED!!!");
     const carousel = document.getElementById("carousel");
-    console.log(carousel);
-    console.log(images);
-
     const carouselText = document.getElementById("carousel-text");
-
     const imageSources = [ ...images];
 
     let image = document.createElement("img");

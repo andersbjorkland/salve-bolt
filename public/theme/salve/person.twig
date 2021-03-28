@@ -1,0 +1,85 @@
+{% extends 'partials/_master.twig' %}
+
+{% macro author(record, withDescription = true, withEmail = true) %}
+    {% set relatedrecords = record|related %}
+    {% if relatedrecords is not empty %}
+        {% set authors = relatedrecords|filter(rec => rec.contentType == "people") %}
+        
+        {% if authors is not empty %}
+            {% set authorContent = authors|first %}
+           <a class="link" href="{{ authorContent|link }}">{{ authorContent.name }}</a>
+
+           {% if withDescription %}
+            <p class="font-thin text-sm" >{{ authorContent.description }}</p>
+           {% endif %}
+
+            {% if withEmail %}
+            <p class="font-thin text-sm brand-blue"><a href="mailto:{{ authorContent.email }}">{{ authorContent.email }}</a></p>
+            {% endif %}
+
+        {% else %}
+            {{ record.author.displayName }}
+        {% endif %}
+    {% else %}
+        {{ record.author.displayName }}
+    {% endif %}
+{% endmacro %}
+
+{% macro authorImage(record) %}
+    {% set relatedrecords = record|related %}
+    {% if relatedrecords is not empty %}
+        {% set authors = relatedrecords|filter(rec => rec.contentType == "people") %}
+        
+        {% if authors is not empty %}
+            {% set authorContent = authors|first %}
+            {% if authorContent.image is defined and authorContent.image is not empty %}
+            <img src="{{ authorContent.image|thumbnail(width=100, height=100, fit="c") }}" alt="{{ authorContent.name }}" />
+            {% endif %}
+        {% endif %}
+    {% endif %}
+{% endmacro %}
+
+
+{% block main %}
+
+            <article aria-label="blog post" class="flex justify-center flex-col">
+                <div class="w-full max-w-screen-lg">
+                    <div class="py-8 md:py-20 px-8 sm:px-16 m-auto max-w-screen-sm relative z-10">
+                        {% if record.image is defined %}
+                            <img src="{{ record.image }}" alt="{{ record.image.alt }}">
+                        {% endif %}
+                        <h1 class="text-3xl font-bold">{{ record|title }}</h1>
+                        <p class="text-sm font-thin mb-4"><time>{{ record.datepublished|localdate('l j F Y')|capitalize }}</time></p>
+
+                        <div class="body-content">
+                            {% if record.content is defined %}
+                                {{ record.content }}
+                            {% endif %}
+                        </div>
+                        <div class="body-content"> 
+                            {% if record.body is defined %}
+                                {{ record.body }}
+                            {% endif %}
+                        </div>
+
+                        <div class="flex flex-wrap gap-4 font-thin text-sm my-4 lg:mt-0">
+                            {% if record|taxonomies['tags'] is defined %}
+                                {% for tag in record|taxonomies['tags'] %}
+                                    <p><a class="link" href="{{ tag|link }}"  class="text-blue-800 underline">{{ tag.name }}</a></p>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                        <div class="author-element">
+                            {{ _self.authorImage(record) }}
+                            <div class="flex flex-col">
+                                {{ _self.author(record) }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+{% endblock %}
+
+{% block scripts %}
+    <script src="https://kit.fontawesome.com/e03440966b.js" crossorigin="anonymous"></script>
+{% endblock %}

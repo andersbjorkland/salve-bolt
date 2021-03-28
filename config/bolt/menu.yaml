@@ -25,3 +25,23 @@ main:
     title: Visit the excellent Bolt website!
 
 foo: bar
+
+sv_main:
+  - label: Hem
+    link: homepage
+  - label: Produkter
+    link: produkter
+  - label: Blogg
+    link: blog
+  - label: Om salve digital
+    link: om-salve-digital
+
+en_main:
+  - label: Home
+    link: '/en'
+  - label: Products
+    link: '/en/products'
+  - label: Blog
+    link: '/en/blog'
+  - label: About salve digital
+    link: '/en/about-salve-digital'

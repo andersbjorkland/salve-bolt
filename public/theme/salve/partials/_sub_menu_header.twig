@@ -9,11 +9,32 @@
 {% macro display_menu_item(item, loop, withsubmenus) %}
     {% from _self import display_menu_item %}
     {% apply spaceless %}
-        <a href="{{ item.uri }}" title='{{ item.title }}' class='{{ item.class }} {{ loop.first ? ' first' -}}
-        {{ loop.last ? ' last' -}}
-        {{ item|current ? ' active' }}'>
-            {{- item.label -}}
-        </a>
+        {% set with_submenu = withsubmenus and item.submenu is not empty %}
+        {% set submenu_id = loop.index %}
+        
+        {% if with_submenu %}
+        <div class="flex flex-col relative">
+            <div class="flex gap-1 px-2">
+                <a href="{{ item.uri }}" title='{{ item.title }}' class='{{ item.class }} {{ loop.first ? ' first' -}}
+                {{ loop.last ? ' last' -}}
+                {{ item|current ? ' active' }}'>
+                    {{- item.label -}}
+                </a>
+                <div id="menuitem-{{submenu_id}}" onclick="toggleSubmenu('submenu-{{submenu_id}}', 'menuitem-{{submenu_id}}')" class="submenu-toggle">&#x25BC;</div>
+            </div>
+            <div id="submenu-{{submenu_id}}" class="flex flex-col text-sm px-2 w-28 absolute bg-white lg:bg-transparent submenu hide">
+                {% for submenu in item.submenu %}
+                    {{ display_menu_item(submenu, loop, true) }}
+                {% endfor %}
+            </div>
+        </div>
+        {% else %}
+            <a href="{{ item.uri }}" title='{{ item.title }}' class='{{ item.class }} {{ loop.first ? ' first' -}}
+            {{ loop.last ? ' last' -}}
+            {{ item|current ? ' active' }}'>
+                {{- item.label -}}
+            </a>
+        {% endif %}
     {% endapply %}
 {% endmacro %}
 
@@ -22,9 +43,9 @@
 
 {# The main menu loop: Iterates over the items, calling `display_menu_item` #}
 <nav class="mt-4 mt:mt-0 md:ml-auto pb-1 flex flex-col items-end">
-    <div id="language-selector" class="md:mt-8 text-sm order-2 md:order-1">
+    <div id="language-selector" class="text-xs absolute top-0 right-0">
         {% for locale in locales() %}
-            {% if '?edit_locale' in locale.link %}
+            {% if 'edit_locale' in locale.link %}
                 {% set linkArr = locale.link|split('?') %}
                 {% if '/' in linkArr[0] %}
                     {% set targetLink = linkArr[0]|split('/') %}
@@ -54,7 +75,7 @@
             <a id="swedish-selector" class="{{ locale.current ? 'active': '' }}" href="{{ localeLink }}">{{ locale.emoji }} {{ locale.localizedname }}</a>
         {% endfor %}
     </div>
-
+    
     <div class="mt-auto font-bold flex gap-4 order-1 md:order-2">
     {% for item in menu %}
         {% if item.label is defined %}
@@ -63,4 +84,21 @@
     {% endfor %}
     </div>
 </nav>
+
+{% block scripts %}
+<script>
+    function toggleSubmenu(targetId, toggleButtonId) {
+        const submenu = document.getElementById(targetId);
+        const toggler = document.getElementById(toggleButtonId);
+
+        if (submenu.classList.contains("hide")) {
+            submenu.classList.remove("hide");
+            toggler.classList.add("active");
+        } else {
+            submenu.classList.add("hide");
+            toggler.classList.remove("active");
+        }
+    }
+</script>
+{% endblock %}
 

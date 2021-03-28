@@ -1,4 +1,13 @@
 <!DOCTYPE html>
+{% setcontent favicon = "favicon" %}
+{% set currentLocale = "" %}
+
+{% for locale in locales() %}
+    {% if locale.current %}
+        {% set currentLocale = locale.code %}
+    {% endif %}
+{% endfor %}
+
 <html lang="{{ htmllang() }}">
 <head>
     <meta charset="utf-8">
@@ -15,10 +24,11 @@
             {{- ' | ' ~ config.get('general/payoff') -}}
         {%- endif -%}
     </title>
+    <link rel="icon" href="{{favicon.image}}?v=1.0">
     {% include 'partials/_og_tags.twig' %}
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     <link rel="stylesheet" href="{{ asset('css/tailwind.css') }}">
 
     {# Add matomo from https://matomo.org/docs/installation and enter its js-hook here. #}
@@ -29,8 +39,9 @@
         <div class="hidden md:block w-1/2 h-screen fixed right-0 cloud-bg"></div>
         <div class="hidden md:block bg-white w-1/2 h-screen fixed diagonal-hero" ></div>
     {% elseif record|default and record.contentType == "pages" %}
-        <div class="hidden lg:block w-1/2  absolute right-0 bg-pink-100 p-4">
-            <img class="py-40 m-auto top-36" src="{{ record|image }}" alt="{{ record.image.alt }}">
+        <div class="hidden lg:block w-1/2 h-screen absolute right-0 {{ heroBgClass }} p-4">
+            {#<img class="py-40 px-20 m-auto top-36" src="{{ record|image }}" alt="{{ record.image.alt }}">
+            #}
         </div>
         <div class="hidden lg:block bg-white w-1/2 h-screen fixed"></div>
     {% endif %}

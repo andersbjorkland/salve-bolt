@@ -119,7 +119,6 @@ main {
 
 #carousel {
     margin: auto;
-    max-height: 22rem;
     display: flex;
     align-items: flex-end;
 }
@@ -189,15 +188,6 @@ form.boltforms {
     border-radius: 50%;
 }
 
-.body-content {
-    display: flex;
-    flex-direction: column;
-
-    gap: 0.5rem;
-
-    margin-bottom: 1rem;
-}
-
 .link:hover {
     opacity: 0.8;
 }
@@ -222,3 +212,77 @@ form.boltforms {
     visibility: hidden;
 }
 
+.body-content {
+
+    *:first-child {
+        margin-top: 0;
+    }
+
+    h2 {
+        font-size: 2rem;
+        line-height: 2rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+    }
+
+    h4 { 
+        font-size: 1.2rem;
+    }
+
+    h5 {
+        font-size: 1rem;
+        font-weight: bold;
+    }
+
+    h2, h3, h4, h5 {
+        margin-top: 4rem;
+        margin-bottom: 1.5rem;
+    }
+
+    h2 {
+        margin-top: 5rem;
+    }
+
+    p {
+        margin: 0.5rem 0;
+    }
+
+    a {
+        color: #3C3CA5;
+        text-decoration: underline;
+    }
+
+}
+
+.hero-image-container {
+    &::after {
+        content: "";
+        background-color: inherit;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: -50%;
+        z-index: -1;
+    }
+}
+
+.faded-container {
+    &::before {
+        content: "";
+        width: 30%;
+        height: 100%;
+        position: absolute;
+        background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+        top: 0;
+        z-index: 30;
+    }
+}
+
+a.active {
+    transform: scale(1.1);
+    text-decoration: underline;
+}

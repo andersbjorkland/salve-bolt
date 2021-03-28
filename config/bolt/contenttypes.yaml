@@ -73,6 +73,7 @@ features:
             localize: true
     show_on_dashboard: true
     locales: [ 'sv', 'en' ]
+    viewless: true
     icon_many: "fa:check-double"
     icon_one: "fa:check"
     show_in_menu: Modify Home
@@ -123,14 +124,13 @@ showcases:
             fields:
                 image:
                     type: image
-                text:
-                    type: text
-            localise: true
+                    localize: true
         components:
             type: collection
             fields:
                 text:
                     type: text
+                    localize: true
         slug:
             type: slug
             uses: title
@@ -139,6 +139,7 @@ showcases:
     locales: [ 'sv', 'en' ]
     icon_many: "fa:shapes"
     icon_one: "fa:shapes"
+    show_in_menu: Modify Home
 
 cta_buttons:
     name: CTA Buttons
@@ -187,6 +188,17 @@ logo:
     icon_many: "fa:image"
     icon_one: "fa:image"
     show_in_menu: Modify Home
+
+favicon:
+    name: favicon
+    singular_name: Favicon
+    fields:
+        image:
+            type: image
+    icon_many: "fa:image"
+    icon_one: "fa:image"
+    show_in_menu: Modify Home
+    singleton: true
 
 # The 'Blocks' ContentType is a so-called 'resource ContentType'. This means
 # that it can be used to manage smaller pieces of content, like the 'about us'
@@ -293,7 +305,7 @@ pages:
             filter: '/^[^_].*\.twig$/'
     taxonomy: [ groups ]
     locales: [ 'sv', 'en' ]
-    record_route: pages
+    record_template: 'pages_default'
     records_per_page: 5
     order: id
 
@@ -437,6 +449,7 @@ product_articles:
     show_on_dashboard: true
     viewless: false
     default_status: published
+    record_template: entry.twig
     searchable: false
     order: title
     locales: [ 'sv', 'en' ]

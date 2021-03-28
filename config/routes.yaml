@@ -18,6 +18,7 @@ frontend:
 # Place your own routes here, that have a LOWER priority than the default routes.
 
 # controller: 'Bolt\Controller\Frontend\DetailController::record'
+
 pages:
   path: /{_locale}/{slugOrId}
   methods: [ GET|POST ]

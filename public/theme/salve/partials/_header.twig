@@ -2,7 +2,7 @@
 <header class="relative z-20 brand-blue mx-8 sm:mx-16 py-4 flex flex-col items-center">
     {% setcontent logo = 'logo/logo-colored' %}
 
-    <div class="flex flex-col md:flex-row w-full max-w-screen-xl items-center">
+    <div class="flex flex-col md:flex-row w-full max-w-screen-xl items-center relative">
 
         {% if logo is not empty%}
         <div id="logo-container">
@@ -12,11 +12,23 @@
         </div>
         {% endif %}
 
+    {% if currentLocale == "en" %}
+
     {{ menu(
-        name = 'main',
+        name = 'en_main',
         template = 'partials/_sub_menu_header.twig',
-        withsubmenus = false
+        withsubmenus = true
     ) }}
+
+    {% else %}
+
+    {{ menu(
+        name = 'sv_main',
+        template = 'partials/_sub_menu_header.twig',
+        withsubmenus = true
+    ) }}
+
+    {% endif %}
     </div>
 
 </header>

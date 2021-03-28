@@ -23,28 +23,37 @@
             </div>
         </div>
         <div class="hidden h-0 lg:h-auto row-start-1 lg:ml-auto lg:flex flex-wrap gap-6 text-sm">
+            
+            {% if currentLocale == "en" %}
             <div class="w-28">
-                <a class="text-white font-semibold" href="#">Hem</a>
+                <a class="text-white font-semibold" href="/en">Home</a>
             </div>
             <div class="w-28 flex flex-col">
-                <a class="text-white font-semibold" href="#">Produkter</a>
-                <a class="text-white text-xs" href="#">Webdesign</a>
-                <a class="text-white text-xs" href="#">Hemsida</a>
-                <a class="text-white text-xs" href="#">CMS</a>
-                <a class="text-white text-xs" href="#">Besökaranalys</a>
+                <a class="text-white font-semibold" href="/en/products">Products</a>
             </div>
             <div class="w-28 flex flex-col">
-                <a class="text-white font-semibold" href="#">Blogg</a>
-                <a class="text-white" href="#">Senaste inläggen</a>
-                <a class="text-white" href="#">Utforska</a>
+                <a class="text-white font-semibold" href="/en/blog">Blog</a>
             </div>
             <div class="w-32 flex flex-col">
-                <a class="text-white font-semibold" href="#">Om salve digital</a>
-                <a class="text-white" href="#">Företagsform</a>
-                <a class="text-white" href="#">Identitet</a>
-                <a class="text-white" href="#">Processer</a>
-                <a class="text-white" href="#">Kontakt</a>
+                <a class="text-white font-semibold" href="/en/about-salve-digital">About Salve digital</a>
             </div>
+
+            {% else %}
+            
+            <div class="w-28">
+                <a class="text-white font-semibold" href="/">Hem</a>
+            </div>
+            <div class="w-28 flex flex-col">
+                <a class="text-white font-semibold" href="/produkter">Produkter</a>
+            </div>
+            <div class="w-28 flex flex-col">
+                <a class="text-white font-semibold" href="/blog">Blogg</a>
+            </div>
+            <div class="w-32 flex flex-col">
+                <a class="text-white font-semibold" href="/om-salve-digital">Om Salve digital</a>
+            </div>
+
+            {% endif %}
         </div>
     </div>
 </footer>

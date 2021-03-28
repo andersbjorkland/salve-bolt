@@ -79,5 +79,41 @@
         <target>No</target>
       </segment>
     </unit>
+    <unit id="Cvej3GD" name="salve.related.subjects">
+        <segment>
+            <source>salve.related.subjects</source>
+            <target>Related Subjects</target>
+        </segment>
+    </unit>
+    <unit id="Cvel3GD" name="salve.products.components">
+        <segment>
+            <source>salve.products.components</source>
+            <target>Components</target>
+        </segment>
+    </unit>
+    <unit id="Dvel3GD" name="salve.contact.title">
+        <segment>
+            <source>salve.contact.title</source>
+            <target>Contact</target>
+        </segment>
+    </unit>
+    <unit id="Fhel3GD" name="salve.contact.text">
+        <segment>
+            <source>salve.contact.text</source>
+            <target>Get a website for your business. Perhaps you've already got a clear picture of what you need, we can help you realise it. Or perhaps you have an abstract idea, we can help make it take form. Contact us today and let us form an action plan together.</target>
+        </segment>
+    </unit>
+    <unit id="Fhel3oW" name="salve.testimonials.title">
+            <segment>
+                <source>salve.testimonials.title</source>
+                <target>Our customers</target>
+            </segment>
+        </unit>
+        <unit id="Fhel3pw" name="salve.testimonials.text">
+            <segment>
+                <source>salve.testimonials.text</source>
+                <target>We help businesses with their digital progression. Here's what some of our customers think.</target>
+            </segment>
+        </unit>
   </file>
 </xliff>

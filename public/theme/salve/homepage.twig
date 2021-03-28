@@ -6,13 +6,13 @@
 {% setcontent testimonials = 'testimonials' %}
 
 {% set imageArr = [] %}
-{% for slide in showcase.slides %}
-
-    {% if slide.type == "image" %}
-        {% set imageArr = imageArr|merge([slide.value|json_encode]) %}
-    {% endif %}
-{% endfor %}
-
+{% if showcase is not null %}
+    {% for slide in showcase.slides %}
+        {% if slide.type == "image" %}
+            {% set imageArr = imageArr|merge([slide.value|json_encode]) %}
+        {% endif %}
+    {% endfor %}
+{% endif %}
 
 {% block main %}
 
@@ -36,6 +36,7 @@
     </section>
 
     {# FEATURES #}
+    {% if features.nbResults > 0 %}
     <section aria-label="features" class="bg-purple-100 flex flex-col items-center relative">
         <div class="brand-purple-bg relative text-white py-0 relative z-10 max-w-screen-xl flex flex-col md:gap-y-0">
             {% for feature in features %}
@@ -47,8 +48,10 @@
             {% endfor %}
         </div>
     </section>
+    {% endif %}
 
     {# SHOWCASE #}
+    {% if (showcase is not null) %}
     <section aria-label="showcase section" class="px-8 sm:px-16 py-24 flex flex-col justify-center relative bg-white z-1">
         <div class="mx-auto w-full max-w-screen-md relative flex flex-col">
             <div class="relative self-center">
@@ -57,16 +60,17 @@
                     Showcase
                 </h2>
             </div>
-            <p class="text-center mt-8 mb-2">Hemsida med målinriktad design, CMS och analytics.</p>
+ 
+            <p class="text-center mt-8 mb-2">{{ showcase.teaser|raw }}</p>
             <div class="flex justify-center">
-                <div class="flex flex-col lg:w-1/2">
-                    <div class="h-80 overflow-hidden bg-gray-50 flex items-center">
+                <div class="flex flex-col">
+                    <div class=" overflow-hidden bg-gray-50 flex items-center">
                         <div id="carousel" class="" ></div>
                     </div>
                     <div class="h-12 mt-auto">
                         <p class="font-light text-center" id="carousel-text"></p>
                     </div>
-                    <p class="text-lg mt-8">Allt detta ingår när du väljer en fullt utrustad hemsida:</p>
+                    <p class="text-lg mt-8">{{ showcase.text|raw }}</p>
                     <div class="flex flex-wrap gap-4 gap-y-1 font-light m-auto">
                         {% for component in showcase.components %}
                             <div class="flex gap-1 w-40">
@@ -80,13 +84,15 @@
         </div>
         <div class="absolute h-0.5 w-1/2 bottom-0 left-1/4 bg-gray-100"></div>
     </section>
+    {% endif %}
 
     {# TESTIMONIALS #}
+    {% if (testimonials.nbResults > 0) %}
     <section aria-label="testimonial section" class="px-8 sm:px-16 pt-16 pb-32 flex justify-center relative bg-white">
         <div class="w-full max-w-screen-md relative m-auto">
             <img class="hidden lg:block absolute -ml-8 -mt-4 h-24 w-24" src="{{ asset('images/triangles.svg') }}" alt="">
-            <h2 class="text-4xl relative">Våra kunder</h2>
-            <p class="mt-8 mb-16">Vi hjälper små- och medelstora företag med sin digitala utveckling. Hör vad några av våra tidigare kunder tycker.</p>
+            <h2 class="text-4xl relative">{{ __('salve.testimonials.title') }}</h2>
+            <p class="mt-8 mb-16">{{ __('salve.testimonials.text') }}</p>
             <div class="m-auto mt-16 max-w-screen-md flex flex-col md:flex-row flex-wrap  gap-8 items-center md:items-start lg:justify-between gap-y-16">
                 {% for testimonial in testimonials %}
                     <div class="flex flex-col w-56 text-sm">
@@ -101,12 +107,14 @@
         </div>
         <div class="absolute h-0.5 w-1/2 bottom-0 left-1/4 bg-gray-100"></div>
     </section>
+    {% endif %}
 
     {# Contact Section #}
     {% include 'partials/_contact_section.twig' %}
 {% endblock %}
 
 {% block scripts %}
+{% if showcase is not null %}
     <script type="module">
         import CarouselHandler from "{{ asset('js/CarouselHandler.js') }}";
 
@@ -131,4 +139,5 @@
             }
         });
     </script>
+{% endif %}
 {% endblock %}

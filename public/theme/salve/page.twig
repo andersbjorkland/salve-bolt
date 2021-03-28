@@ -1,20 +1,42 @@
 {% extends 'partials/_master.twig' %}
 
 {% setcontent ctaButtons = 'cta-buttons' orderby '-title' %}
+{% if page.title|lower == "produkter" or page.title|lower == "products" %}
+    {% set heroBgClass="bg-pink-100" %}
+{% else %}
+    {% set heroBgClass="bg-white" %}
+{% endif %}
 
 {% block main %}
     {# HERO SECTION #}
-    <section aria-label="hero section" class="flex justify-center">
+    <section aria-label="hero section" class="flex justify-center overflow-x-hidden">
         <div class="w-full max-w-screen-xl">
-            <div class="brand-blue min-h-96 pb-16 lg:grid lg:grid-cols-2">
-                <div class="m-auto py-8 md:py-28 px-8 sm:px-16  max-w-screen-sm relative z-10">
+            <div class="relative min-h-96 lg:grid lg:grid-cols-2">
+                
+                {% if page.title|lower == "produkter" or page.title|lower == "products" %}
+                <div class="mx-auto py-8 md:py-28 px-8 sm:px-16  max-w-screen-sm relative z-20">
                     <h1 class=" text-3xl md:text-4xl font-bold">{{ page.title }}</h1>
 
                     <div id="hero-text-container" class="mt-4 tracking-wide leading-6 max-w-md flex flex-col gap-4">
                         {{ page.hero|raw }}
                     </div>
-
                 </div>
+                <div class="hidden lg:block p-20 bg-pink-100 hero-image-container">
+                    <img class="m-auto" src="{{ record|image }}" alt="{{ record.image.alt }}">
+                </div>
+                {% else %}
+                <div class="mx-auto pt-16 px-8 sm:px-16  max-w-screen-sm relative z-10">
+                    <h1 class=" text-3xl md:text-4xl font-bold">{{ page.title }}</h1>
+
+                    <div id="hero-text-container" class="mt-4 tracking-wide leading-6 max-w-md flex flex-col gap-4 body-content">
+                        {{ page.hero|raw }}
+                    </div>
+                </div>
+                <div class="pt-16 relative hidden lg:block bg-white faded-container">
+                    <img class="" src="{{ record|image|thumbnail(width=500, height=500, fit="c") }}" alt="{{ record.image.alt }}">
+                </div>
+                {% endif %}
+                
             </div>
         </div>
     </section>
@@ -22,11 +44,17 @@
     {% if page.title|lower == "produkter" or page.title|lower == "products" %}
         {% include 'partials/_products_page.twig' %}
     {% else %}
-        <section aria-label="content section" class="flex justify-center">
+        <section aria-label="content section" class="body-content relative px-8 sm:px-16 pt-8 pb-16 flex flex-col justify-center relative white-bg">
             <div class="w-full max-w-screen-xl">
-                {{ page.body }}
+                <div class="mx-auto max-w-screen-md">
+                    {{ page.body }}
+                </div>
             </div>
         </section>
+
+        {% if page.title|lower == "om salve digital" or page.title|lower == "about salve digital" %}
+            {% include 'partials/_contact_section.twig' %}
+        {% endif %}
     {% endif %}
 
 
