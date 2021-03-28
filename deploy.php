@@ -39,9 +39,13 @@ task('copy:public', function() {
     run('cp -R {{release_path}}/public/*  /www && cp -R {{release_path}}/public/.[^.]* /www');
 });
 
+task('symlink:public', function() {
+    run('ln -s {{release_path}}/public/*  /www && ln -s {{release_path}}/public/.[^.]* /www');
+});
+
 // [Optional] if deploy fails automatically unlock.
 after('deploy:failed', 'deploy:unlock');
-after('deploy:unlock', 'copy:public');
+//after('deploy:unlock', 'copy:public');
 
 // Migrate database before symlink new release.
 
