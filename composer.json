@@ -49,7 +49,6 @@
         "symfony": {
             "allow-contrib": true,
             "require": "^5.1"
-        },
-        "public-dir": "/www"
+        }
     }
 }
