@@ -7,6 +7,10 @@ use Symfony\Component\ErrorHandler\Debug;
 use Symfony\Component\Dotenv\Dotenv;
 use Symfony\Component\HttpFoundation\Request;
 
+require __DIR__.'/../vendor/autoload.php';
+
+/*
+
 $vendors = '';
 $envs = '';
 
@@ -22,6 +26,9 @@ if (strpos($_SERVER['SERVER_NAME'], 'localhost') !== false
 require $vendors;
 
 (new Dotenv())->loadEnv($envs);
+
+
+*/
 
 // The check is to ensure we don't use .env in production
 if (! isset($_SERVER['APP_ENV'])) {
