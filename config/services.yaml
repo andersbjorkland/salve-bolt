@@ -21,7 +21,7 @@ services:
             $defaultLocale: '%locale%'
             $emailSender: '%app.notifications.email_sender%'
             $projectDir: '%kernel.project_dir%'
-            $publicFolder: '%bolt.public_folder%'
+            $publicFolder: '%env(resolve:PUBLIC_DIR)%'
             $tablePrefix: '%bolt.table_prefix%'
 
     # makes App classes in src/ available to be used as services
