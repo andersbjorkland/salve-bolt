@@ -10,11 +10,11 @@
 {% block main %}
     {# HERO SECTION #}
     <section aria-label="hero section" class="flex justify-center overflow-x-hidden">
-        <div class="w-full max-w-screen-xl">
+        <div class="w-full max-w-screen-xl mx-8 sm:mx-16">
             <div class="relative min-h-96 lg:grid lg:grid-cols-2">
                 
                 {% if page.title|lower == "produkter" or page.title|lower == "products" %}
-                <div class="mx-auto py-8 md:py-28 px-8 sm:px-16  max-w-screen-sm relative z-20">
+                <div class="py-8 md:py-28  max-w-screen-sm relative z-20">
                     <h1 class=" text-3xl md:text-4xl font-bold">{{ page.title }}</h1>
 
                     <div id="hero-text-container" class="mt-4 tracking-wide leading-6 max-w-md flex flex-col gap-4">
@@ -25,7 +25,7 @@
                     <img class="m-auto" src="{{ record|image }}" alt="{{ record.image.alt }}">
                 </div>
                 {% else %}
-                <div class="mx-auto pt-16 px-8 sm:px-16  max-w-screen-sm relative z-10">
+                <div class="pt-16 max-w-screen-sm relative z-10">
                     <h1 class=" text-3xl md:text-4xl font-bold">{{ page.title }}</h1>
 
                     <div id="hero-text-container" class="mt-4 tracking-wide leading-6 max-w-md flex flex-col gap-4 body-content">
