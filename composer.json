@@ -50,6 +50,6 @@
             "allow-contrib": true,
             "require": "^5.1"
         },
-        "public-dir": "public"
+        "public-dir": "/www"
     }
 }
