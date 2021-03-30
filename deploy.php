@@ -39,6 +39,10 @@ task('copy:public', function() {
     run('cp -R {{release_path}}/public/*  /www && cp -R {{release_path}}/public/.[^.]* /www');
 });
 
+task('salve:clear', function() {
+    run('php {{release_path}}/bin/console  cache:clear');
+});
+
 task('symlink:public', function() {
     run('ln -s {{release_path}}/public/*  /www && ln -s {{release_path}}/public/.[^.]* /www');
 });

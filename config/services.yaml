@@ -4,7 +4,7 @@ parameters:
     locale: 'sv'
     # This parameter defines the codes of the locales (languages) enabled in the application
     app_locales: sv|en
-    app.notifications.email_sender: mailer@andersbjorkland.online
+    app.notifications.email_sender: mailer@salve.digital
     bolt.table_prefix: bolt_
     bolt.backend_url: /salve
 
