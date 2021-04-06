@@ -9,7 +9,6 @@
 {% if showcase is not null %}
     {% for slide in showcase.slides %}
         {% if slide.type == "image" %}
-            {% dump(slide.value) %}
             {% set imageArr = imageArr|merge([{path: slide|thumbnail(width=800, height=484, fit="c"), alt: slide.value.alt}]) %}
         {% endif %}
     {% endfor %}
