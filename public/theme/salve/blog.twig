@@ -31,7 +31,7 @@
         <!-- FEATURED POST -->
         <section aria-label="featured section" class="flex justify-center pb-12">
             <div class="px-8 sm:px-16 pb-8 max-w-screen-lg relative z-10 lg:grid lg:grid-cols-2 lg:gap-4">
-                <img src="{{ post|image }}" alt="{{ post.image.alt }}">
+                {% include 'helpers/_responsive_image.twig' with {'image': post.image, 'cssClass': ""} %}
                 <div>
                     <div class="flex gap-4 font-thin text-sm my-4 lg:mt-0">
                     {% if post|taxonomies['tags'] is defined %}
@@ -66,7 +66,7 @@
                         </div>
                         <div class="relative">
                             <!-- img overlay -->
-                            <img class="w-full overflow-y-hidden" src="{{ post|image }}" alt="{{ post.image.alt }}">
+                            {% include 'helpers/_responsive_image.twig' with {'image': post.image, 'cssClass': "w-full overflow-y-hidden"} %}
                             <div class="absolute top-0 h-full w-full gradient-overlay transition-1"></div>
                         </div>
                         <h2 class="text-2xl">{{ post.title }}</h2>

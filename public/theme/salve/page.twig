@@ -22,7 +22,9 @@
                     </div>
                 </div>
                 <div class="hidden lg:block p-20 bg-pink-100 hero-image-container">
-                    <img class="m-auto" src="{{ record|image }}" alt="{{ record.image.alt }}">
+                    {% if record.image is defined %}
+                        {% include 'helpers/_responsive_image.twig' with {'image': record.image, 'cssClass': "m-auto"} %}
+                    {% endif %}
                 </div>
                 {% else %}
                 <div class="pt-16 max-w-screen-sm relative z-10">

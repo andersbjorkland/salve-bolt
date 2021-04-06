@@ -1,0 +1,19 @@
+{#
+# When including this piece, make sure to do it with following syntax:
+# {% include 'helpers/_responsive_image.twig' with {'image': image} %}
+# Requires an image object with the following properties: path and alt.
+#}
+<img class="{{ cssClass }}" src="{{ image.path}}"
+     srcset="
+                    {{ image|thumbnail(width=200) }} 200w,
+                    {{ image|thumbnail(width=400) }} 400w,
+                    {{ image|thumbnail(width=800) }} 800w,
+                    {{ image|thumbnail(width=1400) }} 1400w
+                "
+     sizes="
+                    (max-width: 300px) 200px,
+                    (max-width: 600px) 400px,
+                    (max-width: 1000px) 800px,
+                    1400px
+                "
+     alt="{{ image.alt }}">
