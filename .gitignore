@@ -79,3 +79,5 @@ appveyor.yml
 config_local.yaml
 config/extensions/*_local.yaml
 
+/node_modules/
+

@@ -43,13 +43,28 @@ task('salve:clear', function() {
     run('php {{release_path}}/bin/console  cache:clear');
 });
 
+task('tailwind:build', function() {
+   run('yarn encore production');
+})->local();
+
+task('upload:build', function() {
+    //$result = run('ls ' . __DIR__ . '/public/build');
+    $path = __DIR__ . '\public\build/';
+    $path = str_replace('\\', '/', $path);
+    //run('mkdir {{release_path}}/public/build');
+    $deployPath = get('deploy_path');
+    //writeln('{{release_path}}/public/build/');
+    //writeln($deployPath);
+    upload("public/build/", '{{release_path}}/public/build/');
+});
+
 task('symlink:public', function() {
     run('ln -s {{release_path}}/public/*  /www && ln -s {{release_path}}/public/.[^.]* /www');
 });
 
 // [Optional] if deploy fails automatically unlock.
 after('deploy:failed', 'deploy:unlock');
-//after('deploy:unlock', 'copy:public');
+after('deploy:vendors', 'copy:public');
 
 // Migrate database before symlink new release.
 

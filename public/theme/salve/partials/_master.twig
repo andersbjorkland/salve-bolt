@@ -29,7 +29,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/tailwind.css') }}">
+    {#  <link rel="stylesheet" href="{{ asset('css/tailwind.css') }}"> #}
+    {{ encore_entry_link_tags('tailwind') }}
 
     {# Add matomo from https://matomo.org/docs/installation and enter its js-hook here. #}
     <!-- Matomo -->

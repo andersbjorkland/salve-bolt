@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0f5e57d55b4b4983933503320876faa7",
+    "content-hash": "89ba86e61f2bd00d4fef677174e7f01a",
     "packages": [
         {
             "name": "andersbjorkland/matomo-analytics-extension",

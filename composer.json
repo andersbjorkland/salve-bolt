@@ -15,7 +15,8 @@
         "bolt/themes": "^3.3",
         "symfony/flex": "^1.6",
         "andersbjorkland/matomo-analytics-extension": "^0.1.6",
-        "bolt/forms": "^1.3"
+        "bolt/forms": "^1.3",
+        "symfony/webpack-encore-bundle": "^1.11"
     },
     "autoload": {
         "psr-4": {
