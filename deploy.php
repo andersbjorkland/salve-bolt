@@ -48,13 +48,6 @@ task('tailwind:build', function() {
 })->local();
 
 task('upload:build', function() {
-    //$result = run('ls ' . __DIR__ . '/public/build');
-    $path = __DIR__ . '\public\build/';
-    $path = str_replace('\\', '/', $path);
-    //run('mkdir {{release_path}}/public/build');
-    $deployPath = get('deploy_path');
-    //writeln('{{release_path}}/public/build/');
-    //writeln($deployPath);
     upload("public/build/", '{{release_path}}/public/build/');
 });
 
@@ -64,7 +57,9 @@ task('symlink:public', function() {
 
 // [Optional] if deploy fails automatically unlock.
 after('deploy:failed', 'deploy:unlock');
-after('deploy:vendors', 'copy:public');
+after('deploy:vendors', 'upload:build');
+after('upload:build', 'copy:public');
+
 
 // Migrate database before symlink new release.
 
