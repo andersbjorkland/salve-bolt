@@ -27,7 +27,10 @@
     <link rel="icon" href="{{favicon.image}}?v=1.0">
     {% include 'partials/_og_tags.twig' %}
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700;900&display=swap" rel="stylesheet">
+    </noscript>
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     {#  <link rel="stylesheet" href="{{ asset('css/tailwind.css') }}"> #}
     {{ encore_entry_link_tags('tailwind') }}

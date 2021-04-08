@@ -40,7 +40,7 @@ task('copy:public', function() {
 });
 
 task('salve:clear', function() {
-    run('php {{release_path}}/bin/console  cache:clear');
+    run('cd {{release_path}} && php bin/console cache:clear');
 });
 
 task('tailwind:build', function() {

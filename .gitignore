@@ -55,6 +55,7 @@ appveyor.yml
 
 ###> symfony/framework-bundle ###
 /.env.local
+/.env.prod
 /public/bundles/
 /vendor/
 ###< symfony/framework-bundle ###
