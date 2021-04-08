@@ -72,7 +72,7 @@
                 {# For link that only redirects to default locale, make it a short url. #}
                 {% set localeLink = "/" %}
             {% endif %}
-            <a id="swedish-selector" class="{{ locale.current ? 'active': '' }}" href="{{ localeLink }}">{{ locale.emoji }} {{ locale.localizedname }}</a>
+            <a id="{{ locale.code }}-selector" class="{{ locale.current ? 'active': '' }}" href="{{ localeLink }}">{{ locale.emoji }} {{ locale.localizedname }}</a>
         {% endfor %}
     </div>
     
