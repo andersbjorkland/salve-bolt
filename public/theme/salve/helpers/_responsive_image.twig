@@ -1,6 +1,6 @@
 {#
 # When including this piece, make sure to do it with following syntax:
-# {% include 'helpers/_responsive_image.twig' with {'image': image} %}
+# {% include 'helpers/_responsive_image.twig' with {'cssClass': 'some-class', 'image': image} %}
 # Requires an image object with the following properties: path and alt.
 #}
 <img class="{{ cssClass }}" src="{{ image.path}}"
