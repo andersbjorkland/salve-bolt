@@ -15,7 +15,7 @@ set('ssh_multiplexing', false);
 
 
 // Shared files/dirs between deploys 
-add('shared_files', []);
+add('shared_files', ['config/extensions/andersbjorkland-matomoanalyticsextension.yaml', 'config/extensions/andersbjorkland-matomoanalyticsextension_local.yaml']);
 add('shared_dirs', []);
 
 // Writable dirs by web server 
@@ -26,8 +26,8 @@ set('allow_anonymous_stats', false);
 
 host('salve')
     ->roles('app')
-    //->set('deploy_path', '/home/salve.digital/bolt');
-    ->set('deploy_path', '/customers/f/9/d/salve.digital/httpd.private/bolt');
+    ->set('deploy_path', '~/bolt');
+    //->set('deploy_path', '/customers/f/9/d/salve.digital/httpd.private/bolt');
 
 // Tasks
 
@@ -41,6 +41,11 @@ task('copy:public', function() {
 
 task('salve:clear', function() {
     run('cd {{release_path}} && php bin/console cache:clear');
+});
+
+task('salve:demo', function() {
+    $result = run('cd ~/bolt && pwd');
+    writeln($result);
 });
 
 task('tailwind:build', function() {

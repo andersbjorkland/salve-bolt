@@ -22,14 +22,6 @@
         "/assets/vibrant.js"
       ]
     },
-    "tailwind": {
-      "js": [
-        "/build/runtime.js"
-      ],
-      "css": [
-        "/build/tailwind.css"
-      ]
-    },
     "theme-default": {
       "css": [
         "/assets/theme-default.css"
