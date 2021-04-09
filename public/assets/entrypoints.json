@@ -32,6 +32,14 @@
         "/assets/theme-light.css"
       ]
     },
+    "tailwind": {
+      "js": [
+        "/build/runtime.js"
+      ],
+      "css": [
+        "/build/tailwind.css"
+      ]
+    },
     "theme-dark": {
       "css": [
         "/assets/theme-dark.css"
