@@ -5,12 +5,9 @@
     "license": "proprietary",
     "version": "0.4",
     "require": {
-        "bobdenotter/configuration-notices": "^1.0",
-        "bobdenotter/weatherwidget": "^1.1",
         "bolt/article": "^1.0",
         "bolt/assets": "^4.1",
         "bolt/core": "^4.1",
-        "bolt/newswidget": "^1.1",
         "bolt/redactor": "^1.0",
         "bolt/themes": "^3.3",
         "symfony/flex": "^1.6",

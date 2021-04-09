@@ -200,64 +200,6 @@ favicon:
     show_in_menu: Modify Home
     singleton: true
 
-# The 'Blocks' ContentType is a so-called 'resource ContentType'. This means
-# that it can be used to manage smaller pieces of content, like the 'about us'
-# text, an 'our address' in the footer, or similar short blurbs of text.
-# For more info, see: https://docs.bolt.cm/howto/resource-contenttype
-
-blocks:
-    name: Blocks
-    singular_name: Block
-    excerpt_format: '{teaser}'
-    fields:
-        title:
-            type: text
-            class: large
-            label: Title of this Block
-            localize: true
-            group: Block
-        image:
-            type: image
-            localize: true
-        teaser:
-            type: redactor
-            localize: true
-            fixture_format: '{paragraph}'
-        content:
-            type: redactor
-            localize: true
-        contentlink:
-            type: text
-            label: Link
-            placeholder: 'contentType/slug or https://example.org/'
-            postfix: "Use this to add a link for this Homepage. This could either be an 'internal' link like <tt>page//about</tt>, if you use a contentType/slug combination. Otherwise use a proper URL, like `https://example.org`."
-            fixture_format: '{url}'
-        slug:
-            type: slug
-            uses: [ title ]
-            group: Meta
-    show_on_dashboard: true
-    viewless: true
-    default_status: published
-    searchable: false
-    order: title
-    locales: [ 'sv', 'en' ]
-    icon_many: "fa:cubes"
-    icon_one: "fa:cube"
-    show_in_menu: Modify Home
-
-colors:
-    name: colors
-    singular_name: color
-    fields:
-        name:
-            type: text
-        classcode:
-            type: text
-        slug:
-            type: slug
-            uses: name
-            group: Meta
 
 # Pages can be used for the more 'static' pages on your site. This content-type
 # has a 'templateselect' field, which allows you to override the record_template
