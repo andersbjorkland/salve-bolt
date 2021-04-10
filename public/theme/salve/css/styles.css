@@ -27,7 +27,12 @@
 }
 
 h1, h2, h3, h4 {
-  font-family: 'Playfair Display SC', serif;
+  font-family: "Playfair Display SC", serif;
+}
+
+ul {
+  list-style: disc;
+  margin-left: 1rem;
 }
 
 p {
@@ -39,8 +44,7 @@ nav {
 }
 
 nav a:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 main {
@@ -60,8 +64,7 @@ main {
 }
 
 .diagonal-hero {
-  -webkit-transform: skewX(-10deg) translateX(9vh);
-          transform: skewX(-10deg) translateX(9vh);
+  transform: skewX(-10deg) translateX(9vh);
 }
 
 .triangle {
@@ -73,41 +76,28 @@ main {
 }
 
 .rotate-left {
-  -webkit-transform-origin: bottom left;
-          transform-origin: bottom left;
+  transform-origin: bottom left;
   margin-top: 1.8rem;
   margin-left: 1rem;
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
+  transform: rotate(-45deg);
 }
 
 .rotate-right {
-  -webkit-transform-origin: bottom left;
-          transform-origin: bottom left;
+  transform-origin: bottom left;
   margin-top: 1.8rem;
   margin-left: 1rem;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .rotate-2xright {
-  -webkit-transform-origin: bottom left;
-          transform-origin: bottom left;
+  transform-origin: bottom left;
   margin-top: -1.8rem;
   margin-left: 0;
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 
 .fadeout {
-  -webkit-animation: fadeout 500ms forwards;
-          animation: fadeout 500ms forwards;
-}
-
-@-webkit-keyframes fadeout {
-  100% {
-    opacity: 0;
-  }
+  animation: fadeout 500ms forwards;
 }
 
 @keyframes fadeout {
@@ -115,7 +105,6 @@ main {
     opacity: 0;
   }
 }
-
 .dashed-bg {
   background-image: url("../images/lg-circle-dashed.svg");
   background-repeat: no-repeat;
@@ -132,18 +121,13 @@ main {
 }
 
 .transition-1 {
-  -webkit-transition-duration: 1s;
-          transition-duration: 1s;
+  transition-duration: 1s;
 }
 
 #carousel {
   margin: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  align-items: flex-end;
 }
 
 .product-card {
@@ -157,29 +141,18 @@ form.boltforms {
   padding: 2rem;
   background-color: white;
   --tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  -webkit-box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
-          box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  box-shadow: rgba(0, 0, 0, 0) 0 0 0 0, rgba(0, 0, 0, 0) 0 0 0 0, rgba(0, 0, 0, 0.1) 0 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 }
 
 #contact {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   gap: 1.5rem;
 }
 
 #contact > div {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
 
 #contact > div > label {
@@ -211,13 +184,9 @@ form.boltforms {
 }
 
 .author-element {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   gap: 2rem;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 
 .author-element img {
@@ -229,7 +198,6 @@ form.boltforms {
 }
 
 .submenu-toggle {
-  -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
@@ -238,8 +206,7 @@ form.boltforms {
 }
 
 .submenu-toggle.active {
-  -webkit-transform: rotate(-180deg);
-          transform: rotate(-180deg);
+  transform: rotate(-180deg);
 }
 
 .submenu {
@@ -253,39 +220,31 @@ form.boltforms {
 .body-content *:first-child {
   margin-top: 0;
 }
-
 .body-content h2 {
   font-size: 2rem;
   line-height: 2rem;
 }
-
 .body-content h3 {
   font-size: 1.5rem;
   line-height: 1.5rem;
 }
-
 .body-content h4 {
   font-size: 1.2rem;
 }
-
 .body-content h5 {
   font-size: 1rem;
   font-weight: bold;
 }
-
 .body-content h2, .body-content h3, .body-content h4, .body-content h5 {
   margin-top: 4rem;
   margin-bottom: 1.5rem;
 }
-
 .body-content h2 {
   margin-top: 5rem;
 }
-
 .body-content p {
   margin: 0.5rem 0;
 }
-
 .body-content a {
   color: #3C3CA5;
   text-decoration: underline;
@@ -307,15 +266,14 @@ form.boltforms {
   width: 30%;
   height: 100%;
   position: absolute;
-  background: -webkit-gradient(linear, left top, right top, from(white), to(rgba(255, 255, 255, 0)));
   background: linear-gradient(to right, white, rgba(255, 255, 255, 0));
   top: 0;
   z-index: 30;
 }
 
 a.active {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  transform: scale(1.1);
   text-decoration: underline;
 }
+
 /*# sourceMappingURL=styles.css.map */
