@@ -1,6 +1,6 @@
 {% extends 'partials/_master.twig' %}
 
-{% macro author(record, withDescription = true, withEmail = true) %}
+{% macro author(record, withDescription = true, withContent=false, withEmail = true) %}
     {% set relatedrecords = record|related %}
     {% if relatedrecords is not empty %}
         {% set authors = relatedrecords|filter(rec => rec.contentType == "people") %}
@@ -14,7 +14,7 @@
                 {% endif %}
             </div>
 
-            {% if authorContent.content is defined %}
+            {% if withContent and authorContent.content is defined %}
                 <div class="font-thin text-sm" >{{ authorContent.content|raw }}</div>
             {% endif %}
 
@@ -47,6 +47,17 @@
 
 
 {% set showAside = true %}
+{% setcontent latest = 'blog' latest limit 5 %}
+{% set showRelatedPosts = false %}
+
+{% if record|taxonomies['tags'] is defined and record|taxonomies['tags']|length > 0 %}
+    {% for tag in record|taxonomies['tags'] %}
+        {% setcontent relatedOnTags = record.contentType where { id: '!' ~ record.id, tags: tag.name|safestring(true)} limit 3 %}
+        {% if relatedOnTags.nbResults > 0 %}
+            {% set showRelatedPosts = true %}
+        {% endif %}
+    {% endfor %}
+{% endif %}
 
 {% block main %}
 
@@ -57,7 +68,7 @@
                             {% include 'helpers/_responsive_image.twig' with {'image': record.image, 'cssClass': ""} %}
                         {% endif %}
                         <h1 class="text-3xl font-bold">{{ record|title }}</h1>
-                        <p class="text-sm font-thin mb-4"><time>{{ record.datepublished|localdate('l j F Y')|capitalize }}</time></p>
+                        <p class="text-sm font-thin mb-4"><time>{{ record.publishedAt|localdate('l j F Y')|capitalize }}</time></p>
 
                         <div class="body-content">
                             {% if record.content is defined %}
@@ -80,7 +91,7 @@
                         <div class="author-element">
                             {{ _self.authorImage(record) }}
                             <div class="flex flex-col">
-                                {{ _self.author(record) }}
+                                {{ _self.author(record, true, true, true) }}
                             </div>
                         </div>
                     </div>
@@ -91,34 +102,52 @@
 {% block aside %}
             <aside class="flex justify-center pb-12 lg:pt-20">
                 <div class="px-8 sm:px-16 pb-8 max-w-screen-lg relative z-10 ">
-                    <h2 class="text-lg font-bold">{{'salve.related.subjects'|trans}}</h2>
-                    <div class="flex flex-wrap gap-4 lg:flex-col">
-                        {% if record|taxonomies['tags'] is defined %}
-                            {% for tag in record|taxonomies['tags'] %}
-                                {% setcontent relatedOnTags = record.contentType where { id: '!' ~ record.id, tags: tag.name|safestring(true)} limit 3 %}
-                                {% if relatedOnTags.nbResults > 0 %}
-                                <section aria-label="{{ tag.name }}">
-                                    <h3><a href="{{ tag|link }}" class="text-blue-800 underline font-bold link">{{ tag.name }}</a></h3>
-                                    <div class="flex flex-col gap-2 text-xs">
-                                        {% for related in relatedOnTags %}
-                                        <div>
-                                            <div class="flex gap-2 items-center">
-                                                <div>
-                                                    <h4>{{ related|title  }}</h4>
-                                                    <p class="font-thin"><time>{{ record.datepublished|localdate('l j F Y')|capitalize }}</time>, {{ _self.author(related, false, false) }}</p>
-                                                </div>
-                                                <div class="flex flex-col items-center">
-                                                    <p class="text-3xl"><a class="text-blue-800 font-bold link" href="{{ related|link }}">&rsaquo;</a></p>
+                    {% if showRelatedPosts %}
+                        <section aria-label="related tags" class="mb-8">
+                            <h2 class="text-lg font-bold">{{'salve.related.subjects'|trans}}</h2>
+                            <div class="flex flex-wrap gap-4 lg:flex-col">
+                                {% for tag in record|taxonomies['tags'] %}
+                                    {% setcontent relatedOnTags = record.contentType where { id: '!' ~ record.id, tags: tag.name|safestring(true)} limit 3 %}
+                                    {% if relatedOnTags.nbResults > 0 %}
+                                    <section aria-label="{{ tag.name }}">
+                                        <h3><a href="{{ tag|link }}" class="text-blue-800 underline font-bold link">{{ tag.name }}</a></h3>
+                                        <div class="flex flex-col gap-2 text-xs">
+                                            {% for related in relatedOnTags %}
+                                            <div>
+                                                <div class="flex gap-2 items-center">
+                                                    <div>
+                                                        <h4><a class="text-blue-800 font-bold link" href="{{ related|link }}">{{ related|title  }}</a></h4>
+                                                        <p class="font-thin"><time>{{ related.publishedAt|localdate('l j F Y')|capitalize }}</time></p>
+                                                    </div>
                                                 </div>
                                             </div>
+                                            {% endfor %}
                                         </div>
-                                        {% endfor %}
+                                    </section>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </section>
+                    {% endif %}
+                    {% if latest is defined and latest.nbResults > 0 %}
+                    <section aria-label="{{'salve.blog.latest'|trans}}">
+                        <h2 class="text-lg font-bold">{{'salve.blog.latest'|trans}}</h2>
+                            <div class="flex flex-wrap gap-4 lg:flex-col">
+                            {% for post in latest %}
+                                <div class="flex flex-col gap-2 text-xs">
+                                    <div>
+                                        <div class="flex gap-2 items-center">
+                                            <div>
+                                                <h4><a class="text-blue-800 font-bold link" href="{{ post|link }}">{{ post|title  }}</a></h4>
+                                                <p class="font-thin"><time>{{ post.publishedAt|localdate('l j F Y')|capitalize }}</time></p>
+                                            </div>
+                                        </div>
                                     </div>
-                                </section>
-                                {% endif %}
+                                </div>
                             {% endfor %}
-                        {% endif %}
-                    </div>
+                        </div>
+                    </section>
+                    {% endif %}
                 </div>
             </aside>
 {% endblock %}

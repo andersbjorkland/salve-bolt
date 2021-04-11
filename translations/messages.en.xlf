@@ -115,5 +115,11 @@
                 <target>We help businesses with their digital progression. Here's what some of our customers think.</target>
             </segment>
         </unit>
+      <unit id="0" name="salve.blog.latest">
+          <segment>
+              <source>salve.blog.latest</source>
+              <target>Latest articles</target>
+          </segment>
+      </unit>
   </file>
 </xliff>

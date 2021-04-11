@@ -2727,5 +2727,11 @@
                 <target>Vi hjälper små- och medelstora företag med sin digitala utveckling. Hör vad några av våra tidigare kunder tycker.</target>
             </segment>
         </unit>
+        <unit id="0" name="salve.blog.latest">
+            <segment>
+                <source>salve.blog.latest</source>
+                <target>Senaste inläggen</target>
+            </segment>
+        </unit>
     </file>
 </xliff>
