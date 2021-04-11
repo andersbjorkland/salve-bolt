@@ -7,11 +7,16 @@
         
         {% if authors is not empty %}
             {% set authorContent = authors|first %}
-           <a class="link" href="{{ authorContent|link }}">{{ authorContent.name }}</a>
+            <div class="flex items-baseline gap-2">
+                <a class="link" href="{{ authorContent|link }}">{{ authorContent.name }}</a>
+                {% if withDescription %}
+                    <span class="font-thin text-sm" >{{ authorContent.description }}</span>
+                {% endif %}
+            </div>
 
-           {% if withDescription %}
-            <p class="font-thin text-sm" >{{ authorContent.description }}</p>
-           {% endif %}
+            {% if authorContent.content is defined %}
+                <div class="font-thin text-sm" >{{ authorContent.content|raw }}</div>
+            {% endif %}
 
             {% if withEmail %}
             <p class="font-thin text-sm brand-blue"><a href="mailto:{{ authorContent.email }}">{{ authorContent.email }}</a></p>
@@ -45,7 +50,7 @@
 
 {% block main %}
 
-            <article aria-label="blog post" class="flex justify-center flex-col">
+            <article id="blog-entry" aria-label="blog post" class="flex justify-center flex-col">
                 <div class="w-full max-w-screen-lg">
                     <div class="py-8 md:py-20 px-8 sm:px-0 m-auto max-w-screen-sm relative z-10">
                         {% if record.image is defined %}
