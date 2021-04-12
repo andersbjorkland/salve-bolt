@@ -295,6 +295,7 @@ blog:
             type: slug
             uses: title
             group: Meta
+            localize: true
     relations:
         pages:
             multiple: false
