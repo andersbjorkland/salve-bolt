@@ -26,8 +26,8 @@ set('allow_anonymous_stats', false);
 
 host('salve')
     ->roles('app')
-    //->set('deploy_path', '~/bolt');
-    ->set('deploy_path', '/customers/f/9/d/salve.digital/httpd.private/bolt');
+    ->set('deploy_path', '~/bolt');
+    //->set('deploy_path', '/customers/f/9/d/salve.digital/httpd.private/bolt');
 
 // Tasks
 

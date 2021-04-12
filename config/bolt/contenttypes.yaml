@@ -285,6 +285,7 @@ blog:
         attachments:
             type: filelist
             extensions: [ png, pdf, zip ]
+            localize: true
         body:
             type: article
             localize: true
