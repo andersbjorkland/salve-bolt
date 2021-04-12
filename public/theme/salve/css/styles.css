@@ -304,6 +304,11 @@ a.active {
 #blog-entry iframe {
   width: 100%;
 }
+@media screen and (max-width: 640px) {
+  #blog-entry iframe {
+    height: 100%;
+  }
+}
 #blog-entry .author-element img {
   margin: 0;
 }
