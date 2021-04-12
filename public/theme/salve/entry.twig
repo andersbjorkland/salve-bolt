@@ -107,7 +107,7 @@
                             <h2 class="text-lg font-bold">{{'salve.attachments'|trans}}</h2>
                             <div class="flex flex-col gap-4">
                             {% for file in record.attachments %}
-                                <a class="text-blue-800 link" href="/files/{{ file.filename }}" target="_blank" rel="noopener">{{ file.title }}</a>
+                                <a class="text-blue-800 link serif text-xs font-bold" href="/files/{{ file.filename }}" target="_blank" rel="noopener">{{ file.title }}</a>
                             {% endfor %}
                             </div>
                         </section>

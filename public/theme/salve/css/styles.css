@@ -40,6 +40,10 @@ ol {
   margin-left: 3rem;
 }
 
+.serif {
+  font-family: "Playfair Display SC", serif;
+}
+
 p {
   font-family: "Open Sans", sans-serif;
 }
@@ -296,6 +300,9 @@ a.active {
 }
 #blog-entry p {
   margin: 1rem 0 1.5rem 0;
+}
+#blog-entry iframe {
+  width: 100%;
 }
 #blog-entry .author-element img {
   margin: 0;

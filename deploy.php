@@ -62,7 +62,7 @@ task('symlink:public', function() {
 
 // [Optional] if deploy fails automatically unlock.
 after('deploy:failed', 'deploy:unlock');
-after('deploy:vendors', 'upload:build');
+after('deploy:unlock', 'upload:build');
 after('upload:build', 'copy:public');
 
 
