@@ -43,7 +43,7 @@
                     <h2 class="text-3xl font-bold">{{ post.title }}</h2>
                     <p class="text-sm font-thin mb-4"><time>{{ post.datepublished|localdate('l j F Y')|capitalize }}</time>, av {{ author|raw }}</p>
                     <p class="mb-4">{{ post.teaser }}</p>
-                    <a class="text-blue-800 font-semibold underline" href="{{ post|link }}">Läs mer</a>
+                    <a class="text-blue-800 font-semibold underline" href="{{ post|link }}">{{'general.phrase.read-more'|trans}}</a>
                 </div>
             </div>
         </section>
@@ -74,7 +74,7 @@
                         <p class="text-sm">
                             {{ post.teaser }}
                         </p>
-                        <a class="text-blue-800 font-semibold underline" href="{{ post|link }}">Läs mer</a>
+                        <a class="text-blue-800 font-semibold underline" href="{{ post|link }}">{{'general.phrase.read-more'|trans}}</a>
                     </div>      
 
 
