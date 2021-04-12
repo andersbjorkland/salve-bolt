@@ -282,6 +282,9 @@ blog:
             type: image
             upload: entries
             localize: true
+        attachments:
+            type: filelist
+            extensions: [ png, pdf, zip ]
         body:
             type: article
             localize: true

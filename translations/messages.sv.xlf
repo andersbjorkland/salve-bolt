@@ -2733,5 +2733,11 @@
                 <target>Senaste inläggen</target>
             </segment>
         </unit>
+        <unit id="1" name="salve.attachments">
+            <segment>
+                <source>salve.attachments</source>
+                <target>Bilagor</target>
+            </segment>
+        </unit>
     </file>
 </xliff>

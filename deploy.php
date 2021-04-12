@@ -40,7 +40,7 @@ task('copy:public', function() {
 });
 
 task('salve:clear', function() {
-    run('cd {{release_path}} && php bin/console cache:clear');
+    run('cd ~/bolt/release && php bin/console cache:clear');
 });
 
 task('salve:demo', function() {

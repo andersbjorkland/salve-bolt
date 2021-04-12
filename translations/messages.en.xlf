@@ -121,5 +121,11 @@
               <target>Latest articles</target>
           </segment>
       </unit>
+      <unit id="1" name="salve.attachments">
+          <segment>
+              <source>salve.attachments</source>
+              <target>Attachments</target>
+          </segment>
+      </unit>
   </file>
 </xliff>
