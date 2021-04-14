@@ -65,6 +65,9 @@ set('allow_anonymous_stats', false);
  *      HostName ssh.domain.com
  *      User domain.com
  *      IdentityFile /c/Users/user1/.ssh/id_rsa
+ *
+ * This also requires that you've set up the remote with your public key.
+ * I added it in ~/.ssh/authorized_keys on the remote server.
  */
 host('salve')
     ->roles('app')
