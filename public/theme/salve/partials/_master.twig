@@ -21,7 +21,7 @@
         {%- endif -%}
         {{- config.get('general/sitename') -}}
         {%- if record|default == null and config.has('general/payoff') -%}
-            {{- ' | ' ~ config.get('general/payoff') -}}
+            {{- ' | ' ~ 'salve.general.payoff'|trans -}}
         {%- endif -%}
     </title>
     <link rel="icon" href="{{favicon.image}}?v=1.0">

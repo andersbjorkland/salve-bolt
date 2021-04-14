@@ -2739,5 +2739,11 @@
                 <target>Bilagor</target>
             </segment>
         </unit>
+        <unit id="2" name="salve.general.payoff">
+            <segment>
+                <source>salve.general.payoff</source>
+                <target>Vi bygger starka hemsidor åt ert företag</target>
+            </segment>
+        </unit>
     </file>
 </xliff>
