@@ -118,7 +118,7 @@ contact:
         subject_prefix: '[Boltforms]'
         replyto_name: '{NAME}'                 # Email addresses and names can be either the
         replyto_email: '{EMAIL}'                 # name of a field below or valid text.
-        to_name: 'Contact'
+        to_name: 'Anders'
         to_email: 'contact@salve.digital'
         from_name: 'Salve digital'
         from_email: 'mailer@salve.digital'

@@ -82,15 +82,15 @@ main {
 
 .rotate-left {
     transform-origin: bottom left;
-    margin-top: 1.8rem;
-    margin-left: 1rem;
+    margin-top: 1rem;
+    margin-left: 0;
     transform: rotate(-45deg);
 }
 
 .rotate-right {
     transform-origin: bottom left;
-    margin-top: 1.8rem;
-    margin-left: 1rem;
+    margin-top: 1rem;
+    margin-left: 0;
     transform: rotate(45deg);
 }
 
