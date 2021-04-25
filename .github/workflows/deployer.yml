@@ -30,6 +30,10 @@ jobs:
           END
       - name: Install Dependencies
         run: composer install --dev
+      - name: Install Yarn
+        uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: install # will run `yarn install` command
       - name: Deploy app
         uses: deployphp/action@master
         with:
