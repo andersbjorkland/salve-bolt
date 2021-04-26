@@ -6,7 +6,7 @@ require 'recipe/symfony4.php';
 // Project name
 set('application', 'salve');
 
-set('public_dir', '~/salvedigital.site/public_html/');
+set('public_dir', '/www/webvol24/54/gli057ysj96ldm6/salvedigital.site/public_html');
 
 // Project repository
 set('repository', 'https://github.com/andersbjorkland/salve-bolt.git');
@@ -44,7 +44,10 @@ task('build', function () {
  */
 task('copy:public', function() {
     run('cp -R {{release_path}}/public/*  {{public_dir}} && cp -R {{release_path}}/public/.[^.]* {{public_dir}}');
+    //run('cp -R {{release_path}}/public/*  /www && cp -R {{release_path}}/public/.[^.]* /www');
 });
+
+
 
 // Run after first deployment to add public content to public directory via symlink.
 task('symlink:public', function() {
