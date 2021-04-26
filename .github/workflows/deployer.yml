@@ -1,4 +1,4 @@
-name: Deploy Bolt
+name: Deploy Salve Bolt
 on: [workflow_dispatch]
 jobs:
   deploy:
