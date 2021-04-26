@@ -56,6 +56,7 @@ task('tailwind:build', function() {
 })->local();
 
 task('initialize', [
+    'deploy:unlock',
     'deploy:info',
     'deploy:prepare',
     'deploy:lock',
