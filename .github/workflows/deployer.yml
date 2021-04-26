@@ -46,4 +46,4 @@ jobs:
         with:
           private-key: ${{ secrets.PRIVATE_KEY }}
           known-hosts: ${{ secrets.KNOWN_HOSTS }}
-          dep: mydeploy -v
+          dep: mydeploy
