@@ -28,8 +28,8 @@ jobs:
               IdentityFile ~/.ssh/staging.key
               StrictHostKeyChecking no
           END
-      - name: Install Dependencies
-        run: composer require {deployer/deployer}
+      - name: Install Deployer
+        run: composer require deployer/deployer
       - name: Install Yarn
         uses: borales/actions-yarn@v2.0.0
         with:
