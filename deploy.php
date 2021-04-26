@@ -77,7 +77,6 @@ task('mydeploy', [
     'tailwind:build',
     'upload:build',
     'deploy:cache:clear',
-    'deploy:cache:warmup',
     'deploy:symlink',
     'copy:public',
     'deploy:unlock',
