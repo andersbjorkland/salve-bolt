@@ -22,7 +22,7 @@ jobs:
           echo "$SSH_KEY" > ~/.ssh/staging.key
           chmod 600 ~/.ssh/staging.key
           cat >>~/.ssh/config <<END
-            Host satius
+            Host anders
               HostName $SSH_HOST
               User $SSH_USER
               IdentityFile ~/.ssh/staging.key
@@ -31,7 +31,7 @@ jobs:
       - name: Install Yarn
         uses: nuxt/actions-yarn@master
         with:
-          cmd: install # will run `yarn install` command
+          args: install # will run `yarn install` command
       - name: Deploy app
         uses: deployphp/action@master
         with:
