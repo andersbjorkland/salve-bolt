@@ -89,8 +89,8 @@ task('mydeploy', [
     'upload:build',
     'deploy:cache:clear',
     'deploy:symlink',
-    //'symlink:public',
-    'copy:public',
+    'symlink:public',
+    //'copy:public',
     'deploy:unlock',
     'cleanup',
 ]);

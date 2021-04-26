@@ -16,8 +16,8 @@ if (strpos($_SERVER['SERVER_NAME'], 'localhost') !== false
     $vendors =  dirname(__DIR__).'/vendor/autoload.php';
     $envs = dirname(__DIR__).'/.env';
 } else {
-    $vendors = dirname( __DIR__ ) . '/salve/current/vendor/autoload.php';
-    $envs    = dirname( __DIR__ ) . '/salve/current/.env';
+    $vendors = dirname( __DIR__ ) . '/vendor/autoload.php';
+    $envs    = dirname( __DIR__ ) . '/.env';
 }
 
 require $vendors;
