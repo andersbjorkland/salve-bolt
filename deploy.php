@@ -83,6 +83,7 @@ task('mydeploy', [
     'cleanup',
 ]);
 
+fail('deploy:lock', 'deploy:unlock');
 
 // [Optional] if deploy fails automatically unlock.
 after('deploy:failed', 'deploy:unlock');
