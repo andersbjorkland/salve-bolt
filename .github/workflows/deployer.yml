@@ -41,6 +41,8 @@ jobs:
         run: yarn install
       - name: Yarn build
         run: yarn run encore production
+      - name: Set Up Deployer
+        run: curl -LO https://deployer.org/deployer.phar && mkdir bin && mv deployer.phar bin/dep && sudo chmod +x bin/dep
       - name: Deploy app
         uses: deployphp/action@master
         with:
