@@ -49,3 +49,5 @@ jobs:
           private-key: ${{ secrets.PRIVATE_KEY }}
           known-hosts: ${{ secrets.KNOWN_HOSTS }}
           dep: mydeploy
+
+# reference: https://jmsche.fr/en/blog/build-assets-with-webpack-encore-on-github-actions
