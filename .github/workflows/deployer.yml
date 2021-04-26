@@ -28,10 +28,19 @@ jobs:
               IdentityFile ~/.ssh/staging.key
               StrictHostKeyChecking no
           END
-      - name: Install Yarn
-        uses: nuxt/actions-yarn@master
+      - name: Cache node_modules
+        uses: actions/cache@v1
+        id: yarn-cache-node-modules
         with:
-          args: install # will run `yarn install` command
+          path: node_modules
+          key: ${{ runner.os }}-yarn-cache-node-modules-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-cache-node-modules-
+      - name: Yarn install
+        if: steps.yarn-cache-node-modules.outputs.cache-hit != 'true'
+        run: yarn install
+      - name: Yarn build
+        run: yarn run encore production
       - name: Deploy app
         uses: deployphp/action@master
         with:
