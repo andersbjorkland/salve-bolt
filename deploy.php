@@ -17,7 +17,7 @@ set('composer_options', '{{composer_action}} --prefer-dist --no-progress --no-in
 
 
 // Shared files/dirs between deploys 
-add('shared_files', ['.env', 'config/extensions/andersbjorkland-matomoanalyticsextension.yaml', 'config/extensions/andersbjorkland-matomoanalyticsextension_local.yaml']);
+add('shared_files', ['.env', 'config/extensions/andersbjorkland-matomoanalyticsextension.yaml']);
 add('shared_dirs', []);
 
 // Writable dirs by web server 
@@ -26,9 +26,9 @@ set('allow_anonymous_stats', false);
 
 // Hosts
 
-host('satius')
-    ->set('deploy_path', '~/{{application}}')
-    ->set('http_user', 'satius.digital');
+host('salvesite')
+    ->set('deploy_path', '~/salvedigital.site/{{application}}')
+    ->set('http_user', 'tmyyjr');
     
 // Tasks
 
@@ -42,6 +42,11 @@ task('build', function () {
  */
 task('copy:public', function() {
     run('cp -R {{release_path}}/public/*  /www && cp -R {{release_path}}/public/.[^.]* /www');
+});
+
+// Run after first deployment to add public content to public directory via symlink.
+task('symlink:public', function() {
+    run('ln -s {{release_path}}/public/*  {{public_dir}} && ln -s {{release_path}}/public/.[^.]* {{public_dir}}');
 });
 
 /* Uploads built assets from local to remote. Requires rsync.
@@ -79,17 +84,17 @@ task('mydeploy', [
     'upload:build',
     'deploy:cache:clear',
     'deploy:symlink',
-    'copy:public',
+    'symlink:public',
+    //'copy:public',
     'deploy:unlock',
     'cleanup',
 ]);
 
-fail('deploy:lock', 'deploy:unlock');
+fail('deploy:lock', 'deploy:failed');
 
 // [Optional] if deploy fails automatically unlock.
 after('deploy:failed', 'deploy:unlock');
 
-after('mydeploy', 'success');
 
 
 // Migrate database before symlink new release.
