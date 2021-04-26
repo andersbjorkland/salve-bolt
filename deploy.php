@@ -88,6 +88,9 @@ task('mydeploy', [
 // [Optional] if deploy fails automatically unlock.
 after('deploy:failed', 'deploy:unlock');
 
+after('mydeploy', 'success');
+
+
 // Migrate database before symlink new release.
 
 //before('deploy:symlink', 'database:migrate');
