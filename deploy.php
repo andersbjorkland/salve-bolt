@@ -3,6 +3,8 @@ namespace Deployer;
 
 require 'recipe/symfony4.php';
 
+fail('mydeploy', 'deploy:failed');
+
 // Project name
 set('application', 'salve');
 
@@ -51,7 +53,12 @@ task('copy:public', function() {
 
 // Run after first deployment to add public content to public directory via symlink.
 task('symlink:public', function() {
-    run('ln -s {{release_path}}/public/*  {{public_dir}} && ln -s {{release_path}}/public/.[^.]* {{public_dir}}');
+    run('ln -s {{release_path}}/public/*  {{public_dir}}');
+});
+
+// Copy .htaccess to public that needs to be there.
+task('copy:htaccess', function() {
+    run('cp -R {{release_path}}/public/.htaccess {{public_dir}}');
 });
 
 /* Uploads built assets from local to remote. Requires rsync.
@@ -77,7 +84,6 @@ task('initialize', [
 ]);
 
 task('mydeploy', [
-    'deploy:unlock',
     'deploy:info',
     'deploy:prepare',
     'deploy:lock',
@@ -90,17 +96,13 @@ task('mydeploy', [
     'deploy:cache:clear',
     'deploy:symlink',
     'symlink:public',
-    //'copy:public',
+    'copy:htaccess',
     'deploy:unlock',
     'cleanup',
 ]);
 
-fail('deploy:lock', 'deploy:failed');
-
 // [Optional] if deploy fails automatically unlock.
 after('deploy:failed', 'deploy:unlock');
-
-
 
 // Migrate database before symlink new release.
 
