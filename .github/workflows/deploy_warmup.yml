@@ -33,4 +33,6 @@ jobs:
       - name: Wamup Cache
         uses: deployphp/action@master
         with:
+          private-key: ${{ secrets.PRIVATE_KEY }}
+          known-hosts: ${{ secrets.KNOWN_HOSTS }}
           dep: deploy:cache:warmup
