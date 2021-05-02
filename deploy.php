@@ -8,7 +8,8 @@ fail('mydeploy', 'deploy:failed');
 // Project name
 set('application', 'salve');
 
-set('public_dir', '/www/webvol24/54/gli057ysj96ldm6/salvedigital.site/public_html');
+//set('public_dir', '/www/webvol24/54/gli057ysj96ldm6/salvedigital.site/public_html');
+set('public_dir', '~/salvedigital.site/public_html');
 
 // Project repository
 set('repository', 'https://github.com/andersbjorkland/salve-bolt.git');
@@ -51,9 +52,8 @@ task('copy:public', function() {
 
 
 
-// Run after first deployment to add public content to public directory via symlink.
 task('symlink:public', function() {
-    run('ln -s {{release_path}}/public/*  {{public_dir}}');
+    run('{{bin/symlink}} {{release_path}}/public/*  {{public_dir}}');
 });
 
 // Copy .htaccess to public that needs to be there.
@@ -96,7 +96,6 @@ task('mydeploy', [
     'deploy:cache:clear',
     'deploy:symlink',
     'symlink:public',
-    'copy:htaccess',
     'deploy:unlock',
     'cleanup',
 ]);
