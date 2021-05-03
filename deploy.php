@@ -17,7 +17,7 @@ set('composer_options', '{{composer_action}} --prefer-dist --no-progress --no-in
 
 
 // Shared files/dirs between deploys 
-add('shared_files', ['.env', 'config/extensions/andersbjorkland-matomoanalyticsextension.yaml']);
+add('shared_files', ['.env', 'config/extensions/andersbjorkland-matomoanalyticsextension.yaml', 'config/extensions/andersbjorkland-matomoanalyticsextension_local.yaml']);
 add('shared_dirs', []);
 
 // Writable dirs by web server 
