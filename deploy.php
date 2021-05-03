@@ -26,9 +26,8 @@ set('allow_anonymous_stats', false);
 
 // Hosts
 
-host('satius')
-    ->set('deploy_path', '~/{{application}}')
-    ->set('http_user', 'satius.digital');
+host('hostserver')
+    ->set('deploy_path', '~/{{application}}');
     
 // Tasks
 
