@@ -80,6 +80,7 @@ appveyor.yml
 
 config_local.yaml
 config/extensions/*_local.yaml
+config/extensions/andersbjorkland-matomoanalyticsextension.yaml
 
 /node_modules/
 
