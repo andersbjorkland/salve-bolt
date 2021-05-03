@@ -43,6 +43,9 @@ task('copy:public', function() {
     run('cp -R {{release_path}}/public/*  /www && cp -R {{release_path}}/public/.[^.]* /www');
 });
 
+task('cache:clear', function() {
+    run('{{bin/php}} {{bin/console}} cache:clear {{console_options}}');
+});
 /* Uploads built assets from local to remote. Requires rsync.
  * Useful when you use Symfony encore/webpack and remote machine doesn't support npm/yarn.
  */
